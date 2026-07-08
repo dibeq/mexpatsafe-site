@@ -19,7 +19,9 @@ todas las rutas internas de recursos (CSS, JS, SVG, imágenes de página) a **ro
 (`/assets/...`, `/images/...`) en las 6 páginas. Razonamiento: es más portable que hardcodear el
 dominio (funciona igual en `www` y no-`www`, y en cualquier subdominio de staging futuro) y más
 robusto que la relativa cuando un archivo se mueve de nivel de carpeta — que es exactamente el
-tipo de bug que causó la desviación de la propuesta de Anna Frejliszek.
+tipo de bug que causó la desviación registrada en la primera propuesta Redbridge del sistema
+(ver SoT, sección Sistema de Propuestas — sin detalle de cliente aquí a propósito, este repo es
+público).
 
 **Trade-off que debes conocer:** root-absoluta se rompe si abres un HTML directamente desde el
 disco (`file://`) sin servidor local — necesitas un `python -m http.server` o similar para
@@ -52,8 +54,9 @@ identidad MexPatSafe, productos (Global Choice, Select, Nacional Plus, Vital), d
 (Bupa exclusivo, red BCBS, English-first, licencia CNSF Y40634), ciudades expat objetivo, CTAs
 (Calendly + WhatsApp). Es un pitch comprimido para agentes IA, no un índice de rastreo.
 
-Contexto de por qué importa: el primer lead 100% digital del negocio (Anna Frejliszek, jul 2026)
-llegó vía canal "AI Assistant" en GA4, sin pauta — es la evidencia real detrás de esta prioridad.
+Contexto de por qué importa: el primer lead 100% digital del negocio (jul 2026) llegó vía canal
+"AI Assistant" en GA4, sin pauta — es la evidencia real detrás de esta prioridad. Detalle del
+lead en el CRM del SoT, no aquí.
 
 ## 4. Stream GA4 separado para propuestas — SIN DECIDIR
 
