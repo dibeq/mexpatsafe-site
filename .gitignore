@@ -1,0 +1,35 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Entornos / secretos
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Herramientas Node (por si se añade tooling de build más adelante)
+node_modules/
+
+# --- Protección de PII: este es un repo PÚBLICO ---
+# El sistema de propuestas (mexpatsafe.com/propuestas/) contiene datos
+# personales de clientes reales (nombre, edad, cotización). NUNCA debe
+# vivir en este repositorio. Si alguna vez se genera una propuesta
+# localmente dentro de esta carpeta por error, esta regla la bloquea.
+/propuestas/
+propuesta-*.html
+
+# Backups locales de Notion / SoT (no son para publicar)
+SoT-backup-*.md
+*.backup.md
+
+# Archivos temporales de ensamblado
+*.tmp

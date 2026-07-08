@@ -1,0 +1,276 @@
+{
+  "version": "Sept 2025",
+  "cnsf_registro": "CNSF-H0719-0039-2025/CONDUSEF-006858-01",
+  "last_updated": "2026-03-26",
+
+  "global_choice": {
+    "nombre": "Bupa Global Choice Health Plan",
+    "aseguradora": "Bupa México Compañía de Seguros, S.A. de C.V.",
+    "suma_asegurada_usd": 1000000,
+    "beneficio_maximo_mxn": 200000000,
+    "coaseguro_pct": 10,
+    "coaseguro_tope_asegurado_usd": 2500,
+    "coaseguro_tope_poliza_usd": 5000,
+    "periodo_espera_general_dias": 60,
+    "edad_minima_contratacion": 18,
+    "edad_maxima_contratacion": 65,
+    "edad_maxima_renovacion": null,
+
+    "planes": {
+      "plan_1": {"deducible_usd": 5000, "maternidad": true},
+      "plan_2": {"deducible_usd": 10000, "maternidad": false},
+      "plan_3": {"deducible_usd": 20000, "maternidad": false}
+    },
+
+    "zonas": {
+      "zona_1": ["Sonora", "Baja California Sur", "Jalisco", "Chihuahua", "Coahuila", "Tamaulipas", "Hidalgo", "Sinaloa", "Guanajuato", "Durango", "Nayarit", "Colima", "Querétaro", "Quintana Roo", "Yucatán"],
+      "zona_2": ["Veracruz", "Chiapas", "Tabasco", "Campeche", "Oaxaca", "Michoacán", "Zacatecas", "Aguascalientes", "San Luis Potosí"],
+      "no_disponible": ["Ciudad de México y Área Metropolitana", "Franja fronteriza", "Baja California Norte", "Puebla", "Morelos", "Estado de México", "Tlaxcala", "Guerrero", "Nuevo León"]
+    },
+
+    "coaseguro_adicional": {
+      "descripcion": "Si el asegurado recibe atención fuera de su zona contratada, se aplica 20% adicional SIN TOPE",
+      "estados_coaseguro_adicional_sin_tope": ["Ciudad de México y Área Metropolitana", "Franja Fronteriza", "Baja California Norte", "Puebla", "Morelos", "Estado de México", "Tlaxcala", "Guerrero", "Nuevo León"]
+    },
+
+    "red_proveedores": {
+      "latinoamerica": "Abierta",
+      "estados_unidos": "Red Global Choice Health Plan",
+      "resto_mundo": "Red Global Bupa",
+      "nota": "Fuera de México solo se cubre dentro de hospitales y proveedores en convenio con Bupa, excepto emergencias"
+    },
+
+    "hospitales_excluidos_eeuu": [
+      "University of Miami",
+      "Bascom Palmer Eye Institute",
+      "NY Presbyterian",
+      "John Hopkins",
+      "MD Anderson",
+      "Vail Clinic",
+      "Brigham and Women's"
+    ],
+
+    "paises_sin_cobertura": ["Cuba", "Siria", "Libia", "Irán", "Corea del Norte"],
+
+    "notificacion_bupa": {
+      "previa_horas": 72,
+      "emergencia_horas_post": 72,
+      "deducible_accidente_window_dias": 10
+    },
+
+    "periodo_espera_general": {
+      "dias": 60,
+      "excepciones_dia_1": [
+        "Accidentes con lesión demostrable que requieran hospitalización inmediata",
+        "Politraumatismos",
+        "Infartos",
+        "Enfermedades agudas de origen infeccioso",
+        "Enfermedades cerebrovasculares (no relacionadas con preexistencia)"
+      ],
+      "nota_excepciones": "En todos los casos excepto accidente debe comprobarse que la vida está en peligro o puede haber daño permanente a órgano vital, por acuerdo mutuo entre médico tratante y consultor médico de Bupa",
+      "nota_importante": "Si un padecimiento presenta síntomas o es diagnosticado DURANTE el período de espera, será considerado exclusión permanente por todas las vigencias",
+      "eliminacion": {
+        "requisitos": [
+          "Cobertura continua bajo otra aseguradora por mínimo 1 año",
+          "Fecha efectiva de nueva póliza dentro de 30 días después de expirar la cobertura anterior",
+          "Declarado en la solicitud de seguro",
+          "Bupa recibe póliza anterior y comprobante de último pago de prima"
+        ],
+        "aplica_a": "Solo al período de espera general. NO aplica a períodos de espera específicos como maternidad (10 meses)"
+      }
+    },
+
+    "preexistentes": {
+      "declaradas": {
+        "sin_sintomas_5_anos": "Cubiertas después del período de espera específico",
+        "con_sintomas_ultimos_5_anos": "Cubiertas después de 2 años de fecha efectiva"
+      },
+      "no_declaradas": "NUNCA cubiertas. Bupa puede rescindir el contrato"
+    },
+
+    "coberturas": {
+
+      "ambulatorio": {
+        "cirugia_ambulatoria": "100%",
+        "examenes_diagnostico": "100%",
+        "honorarios_medicos": "100%",
+        "medicamentos_materiales": "100%",
+        "equipo_medico_durable": "100%",
+        "urgencias_conveniencia_eeuu": {
+          "cobertura": "100%",
+          "copago_usd": 50,
+          "deducible": false,
+          "coaseguro": "el contratado"
+        }
+      },
+
+      "hospitalizacion": {
+        "alojamiento_habitacion_privada_estandar": "100%",
+        "cuidados_intensivos": "100%",
+        "cirugia_honorarios": {
+          "cirujano_principal": "100%",
+          "anestesista": "30% del aprobado al cirujano",
+          "primer_asistente": "20%",
+          "segundo_asistente": "10% (si medicamente necesario)",
+          "asistente_instrumentista": "5%"
+        },
+        "sala_operacion_medicamentos": "100%",
+        "patologia_radiologia_diagnostico": "100%",
+        "protesis_inicial": "100% (no reemplazos en adultos; 2 reemplazos en menores de 18)",
+        "implantes_prosteticos": "100% (requieren preautorización)"
+      },
+
+      "rehabilitacion": {
+        "atencion_medica_hogar": {
+          "limite_usd_dia": 200,
+          "limite_dias_ano": 60,
+          "requiere_preautorizacion": true
+        },
+        "cuidados_paliativos": "100% (requiere preautorización, pacientes terminales)",
+        "fisioterapia_rehabilitacion": {
+          "limite_sesiones_ano": 40,
+          "primeras_20_sin_preautorizacion": true,
+          "inicio_max_dias_post_evento": 30
+        }
+      },
+
+      "internados_ambulatorios": {
+        "condiciones_congenitas": {
+          "menores_18": "USD $500,000 de por vida por padecimiento",
+          "mayores_18": "Hasta límite máximo de póliza"
+        },
+        "tratamiento_cancer": "100% (requiere preautorización)",
+        "trasplantes": {
+          "limite_usd": 300000,
+          "tipo": "por diagnóstico, de por vida",
+          "requiere_preautorizacion": true,
+          "organos_cubiertos": ["Córnea", "Intestino delgado", "Riñón", "Riñón/páncreas", "Hígado", "Corazón", "Pulmón", "Corazón/pulmón", "Médula ósea (no cáncer)"],
+          "nota": "Médula ósea para cáncer está cubierta bajo beneficio de cáncer, no bajo este límite"
+        },
+        "dialisis_renal": "100% (preautorización requerida)",
+        "vih_sida": {
+          "limite_usd": 300000,
+          "tipo": "de por vida",
+          "periodo_espera_meses": 48
+        },
+        "deportes_alto_riesgo_ocasional_amateur": "100%"
+      },
+
+      "maternidad": {
+        "aplica_solo_plan": "Plan 1 (USD $5,000 deducible)",
+        "periodo_espera_meses": 10,
+        "nota_periodo_espera": "Los 10 meses aplican a la FECHA PROBABLE DE PARTO, no a la concepción. No puede eliminarse bajo ningún motivo",
+        "suma_asegurada_usd": 2500,
+        "parto_normal": {
+          "cobertura_usd": 2500,
+          "deducible": false,
+          "coaseguro": false
+        },
+        "cesarea": {
+          "cobertura_usd": 2500,
+          "deducible": false,
+          "coaseguro": false,
+          "nota": "Cesárea electiva o cesárea después de cesárea NO se considera complicación"
+        },
+        "prenatal_postnatal": {
+          "cobertura": "Cubierto bajo beneficio de maternidad",
+          "deducible": false,
+          "coaseguro": false
+        },
+        "complicaciones_maternidad": {
+          "limite_usd": 250000,
+          "deducible": false,
+          "coaseguro": "el contratado",
+          "requiere_preautorizacion": true,
+          "ejemplos_cubiertos": ["Preeclampsia", "Amenaza de aborto espontáneo", "Diabetes gestacional", "Muerte del feto", "Embarazos ectópicos", "Abortos involuntarios"]
+        },
+        "cobertura_recien_nacido_provisional": {
+          "limite_usd": 10000,
+          "dias_cobertura": 90,
+          "deducible": false,
+          "coaseguro": false,
+          "condicion": "Solo aplica si nace de embarazo cubierto"
+        },
+        "inclusion_recien_nacido": {
+          "plazo_dias": 90,
+          "sin_evaluacion_riesgo": "Si nace de embarazo cubierto y se notifica en 90 días"
+        },
+        "exclusiones": ["FIV", "Inseminación artificial", "GIFT", "ZIFT", "Medicamentos fertilidad", "Métodos anticonceptivos", "Esterilización", "Maternidad subrogada", "Almacenamiento células madre"]
+      },
+
+      "transporte": {
+        "ambulancia_aerea": {"limite_usd": 25000},
+        "ambulancia_terrestre": "100%",
+        "repatriacion_restos": {"limite_usd": 5000}
+      },
+
+      "preventivos": {
+        "examen_salud_general": {
+          "limite_usd": 200,
+          "periodo_espera_meses": 10,
+          "aplica_solo_plan": "Plan 1 (USD $5,000 deducible)",
+          "edad_minima": 18,
+          "deducible": false,
+          "coaseguro": "el contratado"
+        }
+      },
+
+      "otros": {
+        "cobertura_dependientes_fallecimiento_titular": {
+          "duracion": "1 año sin costo",
+          "condicion": "Si la muerte fue por accidente/enfermedad cubierta"
+        },
+        "segunda_opinion_quirurgica": "Cubierta (coordinada por Bupa)"
+      }
+    },
+
+    "exclusiones_principales": [
+      "Preexistentes no declaradas",
+      "Cirugía o tratamiento cosmético",
+      "Fertilidad (FIV, IA, GIFT, ZIFT)",
+      "Control de natalidad / esterilización",
+      "Tratamiento dental (excepto accidente cubierto en 30 días)",
+      "Visión / corrección refractiva",
+      "Tratamiento psiquiátrico/psicológico ambulatorio",
+      "Desórdenes del sueño",
+      "Alzheimer",
+      "Medicina alternativa (acupuntura, homeopatía, quiropráctica)",
+      "Enfermedades epidémicas y pandémicas",
+      "Enfermedades de transmisión sexual (excepto VIH tras 48 meses)",
+      "Vacunas",
+      "Tratamientos experimentales",
+      "Lesiones auto infligidas / suicidio",
+      "Conflicto armado / guerra / terrorismo",
+      "Actividades deportivas profesionales o por compensación",
+      "Tratamiento obesidad",
+      "Maternidad subrogada",
+      "Almacenamiento de tejidos / células madre",
+      "Atención en instituciones públicas para derechohabientes",
+      "Órganos mecánicos o animales (excepto puente temporal)",
+      "Atención en proveedores fuera de red en el extranjero",
+      "Cambio/reasignación de sexo"
+    ],
+
+    "proceso_reclamacion": {
+      "pago_directo_nacional": "dictamen@bupa.com.mx",
+      "reembolso": "siniestros@bupa.com.mx",
+      "accidente_nacional": "dictamen@bupa.com.mx",
+      "accidente_extranjero": "usamed@bupalatinamerica.com",
+      "telefono_mexico": "55 5202 1701",
+      "telefono_mexico_gratis": "800 326 3339 / 800 227 3339",
+      "telefono_eeuu": "+1 305 275 1500",
+      "telefono_eeuu_gratis": "+1 800 726 1203",
+      "portal": "www.bupasalud.com.mx",
+      "horario_oficina": "Lunes-Viernes 8:00-17:00, Sábado 8:00-15:00",
+      "servicio_emergencias": "24/7"
+    },
+
+    "periodo_gracia_pago_dias": 30,
+    "prescripcion_acciones_anos": 2,
+    "cancelacion": {
+      "primeros_30_dias": "Devolución prima completa menos gastos administrativos",
+      "despues_30_dias": "Devolución 65% prima no devengada",
+      "con_siniestro": "Sin devolución"
+    }
+  }
+}

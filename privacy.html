@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- SEO -->
+<title>Privacy Policy & Aviso de Privacidad | Mexpat Safe</title>
+<meta name="description" content="Privacy policy and Aviso de Privacidad Integral for Mexpat Safe and Bupa México. Data protection, LFPDPPP compliance, ARCO rights.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.mexpatsafe.com/privacy.html">
+
+<!-- GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F5ZNZMM6CY"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-F5ZNZMM6CY');
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="/assets/mexpatsafe-logo-cross.svg">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<style>
+.nav-btn { text-decoration: none; }
+.nav-drawer a { text-decoration: none; }
+
+/* ── PRIVACY PAGE LAYOUT ─────────────────────────────────── */
+.privacy-hero {
+  background: linear-gradient(135deg, #07233d 0%, #0F355B 100%);
+  padding: 72px 80px 60px;
+  position: relative;
+  overflow: hidden;
+}
+
+.privacy-hero::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 360px; height: 360px;
+  background: rgba(214,152,40,0.07);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.privacy-hero .inner { max-width: 760px; position: relative; }
+.privacy-hero h1 { color: #fff; font-size: clamp(28px, 4vw, 44px); margin-bottom: 14px; }
+.privacy-hero p { color: rgba(255,255,255,0.65); font-size: 16px; line-height: 1.6; }
+
+.privacy-nav-tabs {
+  background: #fff;
+  border-bottom: 2px solid #e5e9f0;
+  padding: 0 80px;
+  display: flex;
+  gap: 0;
+  position: sticky;
+  top: 68px;
+  z-index: 100;
+}
+
+.privacy-tab {
+  padding: 18px 24px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #6B7280;
+  border: none;
+  border-bottom: 3px solid transparent;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+  margin-bottom: -2px;
+}
+
+.privacy-tab.active,
+.privacy-tab:hover {
+  color: #0F355B;
+  border-bottom-color: #D69828;
+}
+
+.privacy-body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 80px 80px;
+}
+
+.privacy-section { display: none; }
+.privacy-section.active { display: block; }
+
+/* ── DOCUMENT STYLES ─────────────────────────────────────── */
+.doc-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  background: #F4F6F9;
+  border-radius: 12px;
+  margin-bottom: 36px;
+  border-left: 4px solid #D69828;
+}
+
+.doc-header img { height: 36px; width: auto; flex-shrink: 0; }
+
+.doc-header-text h2 {
+  font-size: 18px;
+  color: #0F355B;
+  margin-bottom: 4px;
+}
+
+.doc-header-text p {
+  font-size: 13px;
+  color: #6B7280;
+}
+
+.doc-updated {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(214,152,40,0.12);
+  border-radius: 20px;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #b8820a;
+  margin-bottom: 32px;
+}
+
+.doc-section {
+  margin-bottom: 36px;
+}
+
+.doc-section h3 {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  color: #0F355B;
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #e5e9f0;
+}
+
+.doc-section p {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.75;
+  margin-bottom: 12px;
+}
+
+.doc-section ul, .doc-section ol {
+  padding-left: 20px;
+  margin-bottom: 12px;
+}
+
+.doc-section li {
+  font-size: 15px;
+  color: #374151;
+  line-height: 1.75;
+  margin-bottom: 6px;
+}
+
+.doc-section strong { color: #0F355B; }
+
+.doc-section a {
+  color: #0F355B;
+  font-weight: 600;
+}
+
+.doc-highlight {
+  background: #F4F6F9;
+  border-radius: 10px;
+  padding: 18px 20px;
+  margin: 16px 0;
+  font-size: 14px;
+  color: #374151;
+  line-height: 1.7;
+}
+
+.doc-highlight strong { color: #0F355B; }
+
+.agent-card {
+  background: #0F355B;
+  border-radius: 14px;
+  padding: 28px;
+  margin-bottom: 32px;
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.agent-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(214,152,40,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.agent-info h3 {
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.agent-info p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.agent-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(214,152,40,0.2);
+  border: 1px solid rgba(214,152,40,0.4);
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #f0b93a;
+  margin-top: 8px;
+}
+
+.arco-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 16px 0;
+}
+
+.arco-item {
+  background: #F4F6F9;
+  border-radius: 10px;
+  padding: 16px;
+  border-top: 3px solid #D69828;
+}
+
+.arco-item h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  color: #0F355B;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.arco-item p {
+  font-size: 13px;
+  color: #6B7280;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ── MOBILE ──────────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .privacy-hero { padding: 56px 40px 48px; }
+  .privacy-nav-tabs { padding: 0 40px; overflow-x: auto; }
+  .privacy-body { padding: 48px 40px; }
+}
+
+@media (max-width: 768px) {
+  .privacy-hero { padding: 48px 20px 40px; }
+  .privacy-nav-tabs { padding: 0 20px; top: 60px; }
+  .privacy-tab { padding: 14px 16px; font-size: 13px; }
+  .privacy-body { padding: 36px 20px 56px; }
+  .arco-grid { grid-template-columns: 1fr; }
+  .agent-card { flex-direction: column; gap: 14px; }
+  .doc-header { flex-direction: column; gap: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="logo">
+    <img src="/assets/mexpatsafe-logo-white.svg" alt="Mexpat Safe" style="height:36px;width:auto;">
+  </a>
+  <div class="nav-right">
+    <a href="index.html" class="nav-btn">Home</a>
+    <a href="about.html" class="nav-btn">About</a>
+    <a href="plans.html" class="nav-btn">Plans</a>
+    <a href="contact.html" class="nav-btn">Contact</a>
+    <a href="https://calendly.com/mexpatsafe-info/30min" target="_blank" rel="noopener" class="nav-cta">Book Free Consultation</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger" onclick="toggleDrawer()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="nav-drawer" id="navDrawer">
+  <div class="drawer-links">
+    <a href="index.html" style="display:block;padding:12px 8px;color:rgba(255,255,255,0.8);text-decoration:none;font-size:17px;border-bottom:1px solid rgba(255,255,255,0.07)">Home</a>
+    <a href="about.html" style="display:block;padding:12px 8px;color:rgba(255,255,255,0.8);text-decoration:none;font-size:17px;border-bottom:1px solid rgba(255,255,255,0.07)">About</a>
+    <a href="plans.html" style="display:block;padding:12px 8px;color:rgba(255,255,255,0.8);text-decoration:none;font-size:17px;border-bottom:1px solid rgba(255,255,255,0.07)">Plans</a>
+    <a href="contact.html" style="display:block;padding:12px 8px;color:rgba(255,255,255,0.8);text-decoration:none;font-size:17px">Contact</a>
+  </div>
+  <a href="https://calendly.com/mexpatsafe-info/30min" target="_blank" rel="noopener" class="drawer-cta" style="display:block;margin-top:20px;text-align:center;text-decoration:none">📅 Book Free Consultation</a>
+</div>
+
+
+<!-- HERO -->
+<div class="privacy-hero">
+  <div class="inner">
+    <div class="section-tag"><div class="stag-dot"></div><span>Legal</span></div>
+    <h1>Privacy Policy &amp;<br>Aviso de Privacidad</h1>
+    <p>This page contains two privacy notices: the Aviso de Privacidad Integral of Bupa México (the insurer), and the independent privacy notice of Mexpat Safe, operated by the authorized Bupa agent Diego Eduardo Beltrán Quero.</p>
+  </div>
+</div>
+
+
+<!-- TAB NAVIGATION -->
+<div class="privacy-nav-tabs">
+  <button class="privacy-tab active" onclick="showPrivacySection('mexpatsafe', this)">
+    Mexpat Safe — Agent Notice
+  </button>
+  <button class="privacy-tab" onclick="showPrivacySection('bupa', this)">
+    Bupa México — Aviso Integral
+  </button>
+</div>
+
+
+<!-- BODY -->
+<div class="privacy-body">
+
+  <!-- ═══════════════════════════════════════
+       SECTION 1: MEXPAT SAFE
+  ═══════════════════════════════════════ -->
+  <div class="privacy-section active" id="section-mexpatsafe">
+
+    <div class="doc-updated">📅 Last updated: January 2026</div>
+
+    <div class="agent-card">
+      <div class="agent-avatar">👤</div>
+      <div class="agent-info">
+        <h3>Diego Eduardo Beltrán Quero</h3>
+        <p>Authorized Bupa Insurance Agent · Agente de Seguros y Fianzas<br>
+        Operating as Mexpat Safe — mexpatsafe.com</p>
+        <div class="agent-badge">✓ CNSF Licensed · Cédula A1 · Clave Y40634</div>
+      </div>
+    </div>
+
+    <div class="doc-section">
+      <h3>I. Identity and Contact Information</h3>
+      <p><strong>Responsible party:</strong> Diego Eduardo Beltrán Quero, acting as an authorized independent insurance agent (Agente de Seguros y Fianzas) operating under the commercial name <strong>Mexpat Safe</strong>, with CNSF license Cédula A1, Clave Y40634, regulated by the Comisión Nacional de Seguros y Fianzas (CNSF).</p>
+      <p><strong>Contact for privacy matters:</strong><br>
+      Email: <a href="mailto:info@mexpatsafe.com">info@mexpatsafe.com</a><br>
+      Website: <a href="https://www.mexpatsafe.com">www.mexpatsafe.com</a></p>
+      <div class="doc-highlight">
+        Mexpat Safe acts as an <strong>independent intermediary</strong> between clients and Bupa México, Compañía de Seguros, S.A. de C.V. The personal data collected through Mexpat Safe is used solely to provide insurance advisory services and facilitate the insurance contracting process with Bupa México.
+      </div>
+    </div>
+
+    <div class="doc-section">
+      <h3>II. Personal Data We Collect</h3>
+      <p>In the course of providing insurance advisory services, Mexpat Safe may collect the following personal data:</p>
+      <ul>
+        <li><strong>Identification data:</strong> Full name, date of birth, nationality, country of residence</li>
+        <li><strong>Contact data:</strong> Email address, phone number (including WhatsApp)</li>
+        <li><strong>Health data (sensitive):</strong> General health status, pre-existing conditions — only as necessary to evaluate insurance eligibility and obtain a quote from Bupa México</li>
+        <li><strong>Financial data:</strong> General budget range for insurance purposes — no payment card or banking data is collected by Mexpat Safe</li>
+        <li><strong>Family data:</strong> Number of dependents, ages, maternity status — only when relevant to the plan being evaluated</li>
+        <li><strong>Navigation data:</strong> Via Google Analytics 4 (GA4) — anonymized usage data from mexpatsafe.com</li>
+      </ul>
+      <p>Health data is considered <strong>sensitive personal data</strong> under the LFPDPPP and will only be collected with your explicit consent, and solely for the purpose of insurance advisory.</p>
+    </div>
+
+    <div class="doc-section">
+      <h3>III. Purpose of Data Processing</h3>
+      <p><strong>Primary purposes:</strong></p>
+      <ol>
+        <li>To provide personalized Bupa insurance advisory and recommendations</li>
+        <li>To prepare and present insurance quotes and proposals</li>
+        <li>To facilitate the application and enrollment process with Bupa México</li>
+        <li>To follow up on the status of insurance applications</li>
+        <li>To provide ongoing client support during the life of the policy</li>
+      </ol>
+      <p><strong>Secondary purposes (you may opt out):</strong></p>
+      <ol>
+        <li>To send relevant health insurance news and updates</li>
+        <li>To inform about new Bupa plans or coverage changes</li>
+        <li>To conduct client satisfaction surveys</li>
+      </ol>
+      <p>If you do not wish your data to be used for secondary purposes, please send an email to <a href="mailto:info@mexpatsafe.com">info@mexpatsafe.com</a> indicating your preference.</p>
+    </div>
+
+    <div class="doc-section">
+      <h3>IV. Data Transfers</h3>
+      <p>Your personal data may be shared with:</p>
+      <ul>
+        <li><strong>Bupa México, Compañía de Seguros, S.A. de C.V.</strong> — for the purpose of obtaining quotes, processing applications, and managing policies. Bupa México's own privacy notice applies to data processed directly by them.</li>
+        <li><strong>Google LLC</strong> — through Google Analytics 4, for anonymized website analytics. No personally identifiable information is shared with Google through GA4.</li>
+      </ul>
+      <p>Mexpat Safe does not sell, rent, or commercially share your personal data with any other third parties.</p>
+    </div>
+
+    <div class="doc-section">
+      <h3>V. Your ARCO Rights</h3>
+      <p>Under the Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP), you have the following rights:</p>
+      <div class="arco-grid">
+        <div class="arco-item">
+          <h4>Access</h4>
+          <p>Know what personal data we hold about you and how it is being used.</p>
+        </div>
+        <div class="arco-item">
+          <h4>Rectification</h4>
+          <p>Request correction of inaccurate or incomplete personal data.</p>
+        </div>
+        <div class="arco-item">
+          <h4>Cancellation</h4>
+          <p>Request deletion of your personal data from our records.</p>
+        </div>
+        <div class="arco-item">
+          <h4>Opposition</h4>
+          <p>Object to the processing of your personal data for specific purposes.</p>
+        </div>
+      </div>
+      <p>To exercise any of these rights, send a written request to <a href="mailto:info@mexpatsafe.com">info@mexpatsafe.com</a> including: your full name, a description of the right you wish to exercise, and a copy of a valid ID. We will respond within <strong>20 business days</strong>.</p>
+    </div>
+
+    <div class="doc-section">
+      <h3>VI. Data Retention</h3>
+      <p>Personal data will be retained for as long as the insurance advisory relationship is active, and for a period of <strong>5 years</strong> thereafter, in compliance with applicable insurance regulation and tax law in Mexico.</p>
+    </div>
+
+    <div class="doc-section">
+      <h3>VII. Cookies and Analytics</h3>
+      <p>Mexpat Safe uses Google Analytics 4 (GA4) to understand how visitors use mexpatsafe.com. GA4 collects anonymized data including pages visited, time on site, and general geographic location (country level). No personally identifiable information is collected through GA4.</p>
+      <p>You can opt out of GA4 tracking by installing the <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">Google Analytics Opt-out Browser Add-on</a>.</p>
+    </div>
+
+    <div class="doc-section">
+      <h3>VIII. Changes to This Notice</h3>
+      <p>This privacy notice may be updated periodically. Any material changes will be communicated via the mexpatsafe.com website. We recommend reviewing this page periodically.</p>
+      <p>This notice is governed by and construed in accordance with the laws of the United Mexican States, specifically the LFPDPPP and its regulations.</p>
+    </div>
+
+  </div><!-- /section-mexpatsafe -->
+
+
+  <!-- ═══════════════════════════════════════
+       SECTION 2: BUPA MÉXICO
+  ═══════════════════════════════════════ -->
+  <div class="privacy-section" id="section-bupa">
+
+    <div class="doc-header">
+      <img src="/assets/bupa-logo.svg" alt="Bupa">
+      <div class="doc-header-text">
+        <h2>Aviso de Privacidad Integral</h2>
+        <p>Bupa México, Compañía de Seguros, S.A. de C.V. · Última actualización: enero 2026</p>
+      </div>
+    </div>
+
+    <div class="doc-section">
+      <h3>I. Identidad y domicilio</h3>
+      <p>Bupa México, Compañía de Seguros, S.A. de C.V. ("Bupa México"), con domicilio en Avenida Ejército Nacional número 843-B, Edificio Corporativo Antara I, piso 10, Colonia Granada, Alcaldía Miguel Hidalgo, C.P. 11520, Ciudad de México; en su carácter de Responsable, pone a su disposición el presente Aviso de Privacidad Integral para garantizar la privacidad de su información y su derecho a la autodeterminación informativa.</p>
+    </div>
+
+    <div class="doc-section">
+      <h3>II. Formas de recabar sus Datos Personales</h3>
+      <p>Bupa México podrá recabar Datos Personales de manera:</p>
+      <ul>
+        <li><strong>Personal:</strong> cuando el Titular llena cuestionarios, formatos o solicitudes por sí mismo o a través de su representante legal o agente.</li>
+        <li><strong>Directa:</strong> cuando el Titular proporciona datos a través de medios electrónicos, ópticos, sonoros, visuales, internet o cualquier otra tecnología.</li>
+        <li><strong>Indirecta:</strong> cuando Bupa México recaba datos a través de fuentes de acceso público o de terceros.</li>
+      </ul>
+    </div>
+
+    <div class="doc-section">
+      <h3>III. Datos Personales objeto de Tratamiento</h3>
+      <p><strong>Datos no sensibles:</strong> identificación, características personales, datos electrónicos o de contacto, datos migratorios, familiares, y financieros o patrimoniales.</p>
+      <p><strong>Datos sensibles:</strong> características personales o fisiológicas, información genética, información de salud, origen étnico o racial, hábitos personales, y preferencias sexuales.</p>
+      <div class="doc-highlight">Los datos sensibles serán tratados con especial diligencia y únicamente para las finalidades primarias establecidas en este aviso.</div>
+    </div>
+
+    <div class="doc-section">
+      <h3>IV. Datos Personales de menores de edad</h3>
+      <p>Bupa México podrá tratar datos de menores de edad. Es responsabilidad del contratante, representante legal, tutor o quien ejerza la patria potestad, proporcionar datos completos, correctos y actualizados, y otorgar consentimiento expreso y por escrito, en términos de la LFPDPPP.</p>
+    </div>
+
+    <div class="doc-section">
+      <h3>V. Finalidades del Tratamiento</h3>
+      <p><strong>Finalidades primarias:</strong></p>
+      <ol>
+        <li>Brindar asesoría sobre productos, servicios y coberturas.</li>
+        <li>Evaluar solicitudes de seguro y selección del riesgo, suscripción y emisión del contrato.</li>
+        <li>Crear y administrar el perfil de servicios en línea del Titular.</li>
+        <li>Procesar el pago de los productos y coberturas contratadas.</li>
+        <li>Dar cumplimiento al contrato de seguro conforme a las condiciones generales.</li>
+        <li>Tramitar cartas de garantía, reclamaciones, siniestros y reembolsos.</li>
+        <li>Gestionar beneficios y coberturas con proveedores médicos, hospitalarios y farmacéuticos.</li>
+        <li>Administración, mantenimiento, modificaciones y renovación de pólizas.</li>
+        <li>Colocación de riesgos en reaseguro y/o coaseguro.</li>
+        <li>Atención de quejas, consultas y requerimientos de información.</li>
+        <li>Cumplimiento de disposiciones para prevenir el lavado de dinero.</li>
+        <li>Prevención de fraudes mediante consulta con el sector asegurador.</li>
+      </ol>
+      <p><strong>Finalidades secundarias (puede oponerse):</strong></p>
+      <ol>
+        <li>Enviar comunicados sobre el cuidado de la salud.</li>
+        <li>Aplicar encuestas de satisfacción del cliente.</li>
+        <li>Elaborar perfiles de comportamiento y preferencias de consumo.</li>
+        <li>Promocionar eventos, concursos y sorteos.</li>
+      </ol>
+    </div>
+
+    <div class="doc-section">
+      <h3>VI. Transferencias de Datos Personales</h3>
+      <p>Bupa México podrá transferir sus datos con: su agente o intermediario, proveedores hospitalarios y médicos, proveedores de servicios asistenciales y ambulatorios, y reaseguradoras y coaseguradoras; con el propósito de dar cumplimiento a las finalidades primarias establecidas.</p>
+    </div>
+
+    <div class="doc-section">
+      <h3>VII. Derechos ARCO y Revocación del consentimiento</h3>
+      <p>Podrá ejercer sus Derechos ARCO (Acceso, Rectificación, Cancelación y Oposición) o revocar su consentimiento enviando una solicitud a:</p>
+      <div class="doc-highlight">
+        <strong>Correo electrónico:</strong> <a href="mailto:privacidad@bupa.com.mx">privacidad@bupa.com.mx</a><br>
+        <strong>Domicilio:</strong> Av. Ejército Nacional 843-B, piso 10, Col. Granada, CDMX, C.P. 11520<br><br>
+        La solicitud debe incluir: nombre del Titular, número de póliza (si aplica), documentos de identidad, y descripción precisa de los datos y derechos que desea ejercer. Bupa México responderá en un plazo máximo de <strong>20 días hábiles</strong>.
+      </div>
+    </div>
+
+    <div class="doc-section">
+      <h3>VIII. Oficial de Privacidad</h3>
+      <p>Para reportar incidentes de privacidad o formular inconformidades relacionadas con el tratamiento de sus datos personales, contacte al Oficial de Privacidad de Bupa México: <a href="mailto:privacidad@bupa.com.mx">privacidad@bupa.com.mx</a></p>
+    </div>
+
+    <div class="doc-section">
+      <h3>IX. Listado de Exclusión de Bupa México</h3>
+      <p>Si desea limitar el uso y divulgación de sus datos para finalidades distintas a las necesarias para la relación jurídica, puede solicitar su inscripción en el Listado de Exclusión de Bupa México enviando su solicitud a <a href="mailto:privacidad@bupa.com.mx">privacidad@bupa.com.mx</a>, incluyendo nombre, domicilio, número de póliza y documentos de identidad.</p>
+    </div>
+
+    <div class="doc-section">
+      <h3>X. REUS — Registro Público de Usuarios (CONDUSEF)</h3>
+      <p>Para limitar el uso de sus datos en prácticas de mercadotecnia por parte de instituciones de seguros, puede inscribirse en el REUS a cargo de la CONDUSEF. Más información en <a href="https://www.gob.mx/condusef" target="_blank" rel="noopener">www.gob.mx/condusef</a>.</p>
+    </div>
+
+    <div class="doc-section">
+      <h3>XI. Uso de cookies</h3>
+      <p>Bupa México utiliza cookies y web beacons en sus plataformas digitales para obtener información sobre el tipo de navegador y sistema operativo, sitios frecuentemente visitados, vínculos seguidos, dirección IP, y ubicación; con la finalidad de brindar atención y ofrecer productos de interés.</p>
+    </div>
+
+    <div class="doc-section">
+      <h3>XII. Actualizaciones</h3>
+      <p>Para consultar modificaciones al Aviso de Privacidad Integral de Bupa México, visite <a href="https://www.bupasalud.com.mx" target="_blank" rel="noopener">www.bupasalud.com.mx</a> en la sección Aviso de Privacidad.</p>
+      <p><em>Última actualización: enero 2026</em></p>
+    </div>
+
+  </div><!-- /section-bupa -->
+
+</div><!-- /privacy-body -->
+
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="/assets/mexpatsafe-logo-white.svg" alt="Mexpat Safe" style="height:32px;width:auto;margin-bottom:14px;">
+      <p class="footer-tagline">Global protection, local peace of mind. Bilingual Bupa-certified insurance for English-speaking expats in Mexico.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Navigate</h5>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="plans.html">Plans</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="mailto:info@mexpatsafe.com">info@mexpatsafe.com</a>
+      <a href="https://wa.me/522221285374?text=Hi.%20I%27m%20interested%20in%20a%20quote%20for%20a%20Bupa%20Insurance%20Plan" target="_blank" data-cta-position="footer">WhatsApp</a>
+    </div>
+    <div class="footer-col">
+      <h5>Legal</h5>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="#">Legal Notice</a>
+      <a href="#">Cookie Policy</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span class="footer-copy">© 2026 Mexpat Safe. All rights reserved. Authorized Bupa partner.</span>
+    <div class="social-icons">
+      <a class="social-icon" href="#" aria-label="LinkedIn">in</a>
+      <a class="social-icon" href="#" aria-label="Facebook">fb</a>
+      <a class="social-icon" href="#" aria-label="Instagram">ig</a>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" data-cta-position="floating" href="https://wa.me/522221285374?text=Hi.%20I%27m%20interested%20in%20a%20quote%20for%20a%20Bupa%20Insurance%20Plan" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+  Chat with us
+</a>
+
+<script>
+function toggleDrawer() {
+  const drawer = document.getElementById('navDrawer');
+  const ham = document.getElementById('hamburger');
+  drawer.classList.toggle('open');
+  ham.classList.toggle('open');
+}
+
+function showPrivacySection(id, btn) {
+  document.querySelectorAll('.privacy-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.privacy-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('section-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+<script src="/assets/js/analytics.js" defer></script>
+
+</body>
+</html>
