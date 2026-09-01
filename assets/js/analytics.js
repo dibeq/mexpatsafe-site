@@ -55,7 +55,7 @@
         cta_position: ctaPosition,
         link_text: linkText
       });
-    } else if (url.indexOf("mailto:") === 0) {
+    } else if (url.indexOf("mailto:") === 0 && url.indexOf("mexpatsafe.com") !== -1) {
       sendEvent("email_click", {
         page_location: pageLocation,
         cta_position: ctaPosition,

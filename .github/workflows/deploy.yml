@@ -1,0 +1,35 @@
+name: Deploy to Neubox (FTPS)
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: {}   # permite dispararlo a mano desde la pestaña Actions
+
+jobs:
+  web-deploy:
+    name: Sync public_html
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Sync files via FTPS
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          server-dir: ./           # la cuenta FTP ya aterriza en public_html
+          local-dir: ./
+          dry-run: true            # PRIMER RUN: simula. Cambiar a false para desplegar de verdad.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/*.md
+            *.patch
+            propuestas/**
+            admon/**
+            mexpatsafe.com/**
