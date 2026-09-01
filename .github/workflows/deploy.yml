@@ -23,7 +23,7 @@ jobs:
           port: 21
           server-dir: ./           # la cuenta FTP ya aterriza en public_html
           local-dir: ./
-          dry-run: true            # PRIMER RUN: simula. Cambiar a false para desplegar de verdad.
+          dry-run: false           # PRIMER RUN: simula. Cambiar a false para desplegar de verdad.
           exclude: |
             **/.git*
             **/.git*/**
