@@ -341,18 +341,39 @@ nav[data-scroll]::-webkit-scrollbar{display:none}
         <h2 style="font-family:'Lora',Georgia,serif;font-weight:600;color:#0F355B;font-size:clamp(22px,2.8vw,28px)">What this policy is</h2>
         <span style="font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:#D69828;font-weight:600">Read before you decide</span>
       </div>
-      <div style="background:#fff;border:1px solid #DDE3EC;border-top:3px solid #b4262b;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px;box-shadow:0 2px 12px rgba(15,53,91,.06)">
-        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid #EEF1F5">
-          <span style="display:flex;flex-direction:column;line-height:1">
-            <span style="font-family:'Lora',Georgia,serif;font-size:22px;color:#b4262b;font-weight:700;letter-spacing:-.4px">{{ carrier.name }}</span>
-            <span style="font-size:8px;letter-spacing:1.8px;color:#8a97a6;text-transform:uppercase;margin-top:4px">{{ carrier.legalSuffix }}</span>
+      <div style="background:#fff;border:1px solid #DDE3EC;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(15,53,91,.06)">
+      <sc-if value="{{ carrier.isRedbridge }}"><div style="height:3px;background:#b4262b"></div></sc-if>
+      <sc-if value="{{ carrier.isBupa }}"><div style="height:3px;background:#0F355B"></div></sc-if>
+      <sc-if value="{{ carrier.isNyl }}"><div style="height:3px;background:#0F355B"></div></sc-if>
+      <div style="padding:24px;display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid #EEF1F5">
+          <sc-if value="{{ carrier.isRedbridge }}">
+            <img src="assets/logos/partners/redbridge-insurance-logo.png" alt="Redbridge" style="width:170px;height:auto;display:block;flex:none">
+          </sc-if>
+          <sc-if value="{{ carrier.isBupa }}">
+            <img src="assets/logos/partners/bupa-logo-trimmed.png" alt="Bupa" style="width:54px;height:54px;display:block;flex:none">
+          </sc-if>
+          <sc-if value="{{ carrier.isNyl }}">
+            <img src="assets/logos/partners/seguros-monterrey-nyl-logo.png" alt="Seguros Monterrey New York Life" style="width:200px;height:auto;display:block;flex:none">
+          </sc-if>
+          <span style="display:flex;flex-direction:column;gap:3px">
+            <span style="font-size:12.5px;color:#0F355B;font-weight:600">{{ carrier.legalSuffix }}</span>
+            <span style="font-size:12px;color:#6B7280;letter-spacing:.4px">{{ carrier.ratingLine }}</span>
           </span>
-          <span style="font-size:12px;color:#6B7280;letter-spacing:.4px">{{ carrier.ratingLine }}</span>
         </div>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;padding-bottom:6px">
+          <sc-for list="{{ carrier.credentials }}" as="cr" hint-placeholder-count="3">
+            <li style="display:flex;align-items:flex-start;gap:10px;font-size:13.5px;color:#1F2937;text-wrap:pretty">
+              <span aria-hidden="true" style="width:16px;height:16px;flex:none;margin-top:3px;background:#D69828;-webkit-mask-image:url(assets/icons/shield-check.svg);mask-image:url(assets/icons/shield-check.svg);-webkit-mask-repeat:no-repeat;mask-repeat:no-repeat;-webkit-mask-position:center;mask-position:center;-webkit-mask-size:contain;mask-size:contain"></span>
+              {{ cr }}
+            </li>
+          </sc-for>
+        </ul>
         <h3 style="font-family:'Lora',Georgia,serif;font-size:17px;color:#0F355B;font-weight:600">{{ carrier.disclosureTitle }}</h3>
         <p style="color:#6B7280;font-size:14.5px;max-width:80ch;text-wrap:pretty">{{ carrier.disclosureBody }}</p>
         <p style="color:#6B7280;font-size:14.5px;max-width:80ch;text-wrap:pretty">Diego Beltrán, operating as Mexpat Safe, acts as an intermediary. All obligations relating to coverage and claims rest with {{ carrier.name }}. <a href="{{ carrier.disclosureUrl }}" target="_blank" rel="noopener" style="font-weight:600;text-decoration:underline;text-decoration-color:#D69828;text-underline-offset:3px;transition:color .2s">Read the full disclosure</a></p>
         <p style="color:#8a97a6;font-size:12.5px;max-width:80ch;text-wrap:pretty">This proposal is for illustration only and is valid for 30 days from {{ client.quoteDate }}. It does not create an insurance contract. The {{ carrier.name }} policy conditions and Schedule of Benefits are the governing documents and prevail in case of any difference.</p>
+      </div>
       </div>
     </section>
 
@@ -388,7 +409,7 @@ nav[data-scroll]::-webkit-scrollbar{display:none}
 
   <footer style="padding:clamp(34px,5vw,54px) 20px 44px;text-align:center;color:#6B7280;font-size:12.5px;line-height:1.8">
     <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
-      <img src="assets/logos/mexpatsafe-logo-blue.svg" alt="Mexpat Safe" style="height:26px;width:auto;max-width:180px;display:block;opacity:.75;font-size:0">
+      <img src="assets/logos/mexpatsafe-logo-blue.svg" alt="Mexpat Safe" style="height:52px;width:auto;max-width:280px;display:block;opacity:.85;font-size:0">
       <div>Global protection, local peace of mind.</div>
       <div>This proposal is private and prepared for {{ client.name }}. Please do not share the link.</div>
     </div>
@@ -514,6 +535,11 @@ const CARRIERS = {
     name: 'Redbridge', legalSuffix: 'Insurance Company, Ltd.', wordmarkColor: '#b4262b',
     logo: 'assets/logos/partners/redbridge-insurance-logo.png',
     currency: 'USD', disclosureAccent: '#b4262b', ratingLine: 'Carrier · AM Best B++ (Good) · Barbados',
+    credentials: [
+      'AM Best Financial Strength Rating B++ (Good), issuer credit rating bbb',
+      'Administered from Coral Gables, Florida, with claims paid in US dollars',
+      'International plans written for expatriates across Latin America and the Caribbean'
+    ],
     disclosureTitle: 'An offshore policy, and what that means',
     disclosureBody: "All plans are issued by Redbridge Insurance Company, Ltd., domiciled in Barbados and administered by Redbridge Group, LLC in Coral Gables, Florida. The policy is regulated under the laws of Barbados, and disputes are resolved there. Premiums are quoted and paid in US dollars and are not deductible for Mexican income tax. Pre-existing conditions must be declared and approved at application to be covered.",
     disclosureUrl: 'https://mexpatsafe.com/redbridge-disclosure.html',
@@ -523,6 +549,11 @@ const CARRIERS = {
     name: 'Bupa', legalSuffix: 'México Compañía de Seguros, S.A. de C.V.', wordmarkColor: '#0F355B',
     logo: 'assets/logos/partners/bupa-logo.png',
     currency: 'MXN', disclosureAccent: '#D69828', ratingLine: 'Carrier · Authorized Bupa partner · Mexico',
+    credentials: [
+      'Bupa has cared for customers since 1947 and operates in markets worldwide',
+      'Bupa Global and Blue Cross Blue Shield Global together reach over 2.1 million healthcare providers in 190 countries',
+      'Bupa México is authorized by the CNSF and supervised by CONDUSEF'
+    ],
     disclosureTitle: 'A Mexican national policy, and what that means',
     disclosureBody: 'This quote is informational only; it does not constitute an insurance application or an offer to insure under Article 5 of the Mexican Insurance Contract Law. Policy issuance is subject to Bupa México\u2019s risk assessment. Rates are valid as of the quote date shown above.',
     disclosureUrl: 'https://mexpatsafe.com/privacy.html',
@@ -531,8 +562,13 @@ const CARRIERS = {
   nyl: {
     name: 'Seguros Monterrey New York Life', legalSuffix: 'Seguros Monterrey New York Life, S.A. de C.V.', wordmarkColor: '#0F355B',
     currency: 'MXN', disclosureAccent: '#D69828', ratingLine: 'Carrier · Seguros Monterrey New York Life · Mexico',
+    credentials: [
+      'Operating in Mexico since 1940, and part of New York Life since 2000',
+      'AM Best Financial Strength Rating A++ (Superior) and Mexico national scale rating aaa.MX (Exceptional)',
+      'Mexico\u2019s fifth largest insurer in the life and health segment, authorized by the CNSF and supervised by CONDUSEF'
+    ],
     disclosureTitle: 'A Mexican national policy, and what that means',
-    disclosureBody: 'This quote is informational only and does not constitute an insurance application. Policy issuance is subject to underwriting review by Seguros Monterrey New York Life. NOTE: no real visual or brand reference for this carrier has been supplied yet to this design system. Verify logo, exact legal name and disclosure wording before sending a real proposal.',
+    disclosureBody: 'This quote is informational only; it does not constitute an insurance application or an offer to insure under Article 5 of the Mexican Insurance Contract Law. Policy issuance is subject to underwriting review by Seguros Monterrey New York Life. Premiums are quoted and paid in Mexican pesos. Rates are valid as of the quote date shown above.',
     disclosureUrl: 'https://mexpatsafe.com/privacy.html',
     directoryUrl: 'https://mexpatsafe.com/plans.html'
   }
