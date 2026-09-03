@@ -1,0 +1,90 @@
+{
+  "carrierKey": "bupa",
+  "scope": "family",
+  "client": {
+    "name": "Alex Morgan",
+    "firstName": "Alex",
+    "age": "52 years old",
+    "location": "Puerto Vallarta, Jalisco",
+    "ref": "PQH00000000",
+    "quoteDate": "September 3, 2026",
+    "effectiveDate": "October 1, 2026"
+  },
+  "members": [
+    { "id": "primary", "name": "Alex", "role": "Policyholder", "age": "52", "priceFactor": 1 },
+    { "id": "spouse", "name": "Jamie", "role": "Spouse", "age": "49", "priceFactor": 0.86 }
+  ],
+  "plans": {
+    "order": ["special", "max", "ultra"],
+    "byKey": {
+      "special": {
+        "name": "Plan Special",
+        "max": "$3,000,000",
+        "net": "Solutions Network",
+        "oon": "Out of network: 70% of covered costs. Emergency hospitalization: 100%.",
+        "hospBadge": "Solutions Network",
+        "hospCount": "276 hospitals",
+        "deds": [
+          { "l": "$500 / $1,000", "p": 6206 },
+          { "l": "$1,000 / $2,000", "p": 5617 },
+          { "l": "$2,000 / $3,000", "p": 4436 },
+          { "l": "$5,000", "p": 3572 }
+        ],
+        "def": 2,
+        "split": true
+      },
+      "max": {
+        "name": "Plan Max",
+        "max": "$5,000,000",
+        "net": "Preferred Network",
+        "oon": "Out of network: 70% of covered costs. Emergency hospitalization: 100%.",
+        "hospBadge": "Preferred Network",
+        "hospCount": "356 hospitals",
+        "deds": [
+          { "l": "$500", "p": 9160 },
+          { "l": "$1,000", "p": 8267 },
+          { "l": "$2,000", "p": 6484 },
+          { "l": "$5,000", "p": 5150 }
+        ],
+        "def": 2,
+        "split": false
+      },
+      "ultra": {
+        "name": "Plan Ultra",
+        "max": "$7,000,000",
+        "net": "Free choice",
+        "oon": "No network on this plan. Any hospital or specialist, at 100%.",
+        "deds": [
+          { "l": "$500 / $1,000", "p": 13929 },
+          { "l": "$1,000 / $2,000", "p": 12866 },
+          { "l": "$2,000 / $3,000", "p": 10736 },
+          { "l": "$5,000", "p": 7858 }
+        ],
+        "hospBadge": "Free choice",
+        "hospCount": "No restriction",
+        "def": 2,
+        "split": true
+      }
+    }
+  },
+  "hospitals": [
+    { "name": "Hospital San Javier", "city": "Puerto Vallarta" },
+    { "name": "Hospital CMQ Premiere", "city": "Puerto Vallarta" }
+  ],
+  "hospFoot": "Replace this list with the network hospitals closest to the client before sending.",
+  "comparisonRows": [
+    { "label": "Hospital room", "values": ["Standard", "Standard", "Private plus suite"] },
+    { "label": "Surgery, ICU, physician fees", "values": ["100%", "100%", "100%"] },
+    { "label": "Cancer treatment", "values": ["100%", "100%", "100%"] }
+  ],
+  "waitingRows": [
+    { "label": "Preventive and routine check up", "value": "3 months" },
+    { "label": "Maternity care", "value": "10 months" }
+  ],
+  "accordions": [
+    { "title": "Sample benefit detail", "subtitle": "Replace with the rider detail for this quote", "body": "Placeholder body text." }
+  ],
+  "perks": [
+    { "title": "Sample included perk", "desc": "Included at no extra premium" }
+  ]
+}
