@@ -1,0 +1,98 @@
+{
+  "carrierKey": "bupa",
+  "scope": "family",
+  "client": {
+    "name": "Sarah and Tom Whitfield",
+    "firstName": "Sarah",
+    "age": "48 years old",
+    "location": "Ajijic, Jalisco",
+    "ref": "BUP20260903A",
+    "quoteDate": "September 3, 2026",
+    "effectiveDate": "October 1, 2026"
+  },
+  "members": [
+    { "id": "primary", "name": "Sarah", "role": "Policyholder", "age": "48", "priceFactor": 1 },
+    { "id": "spouse", "name": "Tom", "role": "Spouse", "age": "51", "priceFactor": 1.08 },
+    { "id": "child1", "name": "Emma", "role": "Daughter", "age": "14", "priceFactor": 0.42 }
+  ],
+  "plans": {
+    "order": ["esencial", "premium", "platino"],
+    "byKey": {
+      "esencial": {
+        "name": "Bupa Esencial",
+        "max": "$1,500,000",
+        "net": "Bupa Mexico Network",
+        "oon": "Out of network: 60% of covered costs. Emergency hospitalization: 100%.",
+        "hospBadge": "Bupa Mexico Network",
+        "hospCount": "180 hospitals",
+        "deds": [
+          { "l": "$15,000 MXN", "p": 41200 },
+          { "l": "$30,000 MXN", "p": 35800 },
+          { "l": "$60,000 MXN", "p": 29400 }
+        ],
+        "def": 1,
+        "split": false
+      },
+      "premium": {
+        "name": "Bupa Premium",
+        "max": "$4,000,000",
+        "net": "Bupa Preferred",
+        "oon": "Out of network: 70% of covered costs. Emergency hospitalization: 100%.",
+        "hospBadge": "Bupa Preferred",
+        "hospCount": "240 hospitals",
+        "deds": [
+          { "l": "$15,000 MXN", "p": 58900 },
+          { "l": "$30,000 MXN", "p": 51300 },
+          { "l": "$60,000 MXN", "p": 43700 }
+        ],
+        "def": 1,
+        "split": false
+      },
+      "platino": {
+        "name": "Bupa Platino",
+        "max": "Unlimited",
+        "net": "Free choice",
+        "oon": "No network on this plan. Any hospital or specialist, at 100%.",
+        "hospBadge": "Free choice",
+        "hospCount": "No restriction",
+        "deds": [
+          { "l": "$15,000 MXN", "p": 84600 },
+          { "l": "$30,000 MXN", "p": 74100 },
+          { "l": "$60,000 MXN", "p": 62800 }
+        ],
+        "def": 1,
+        "split": false
+      }
+    }
+  },
+  "hospitals": [
+    { "name": "Hospital San Javier", "city": "Guadalajara" },
+    { "name": "Hospital Puerta de Hierro", "city": "Zapopan" },
+    { "name": "Hospital Ángeles del Carmen", "city": "Guadalajara" },
+    { "name": "Clínica Ajijic", "city": "Ajijic" }
+  ],
+  "hospFoot": "Confirm the closest network hospital to Lake Chapala with Diego before the policy starts.",
+  "comparisonRows": [
+    { "label": "Hospital room", "values": ["Standard", "Private", "Private plus suite"] },
+    { "label": "Surgery, ICU, physician fees", "values": ["100%", "100%", "100%"] },
+    { "label": "Cancer treatment", "values": ["100%", "100%", "100%"] },
+    { "label": "Maternity", "values": ["Not covered", "$120,000 MXN", "$250,000 MXN"] },
+    { "label": "Dental and vision", "values": ["Not covered", "Basic", "Included"] },
+    { "label": "Coverage abroad", "values": ["Emergency only", "Emergency plus referral", "Worldwide"] }
+  ],
+  "waitingRows": [
+    { "label": "Preventive and routine check up", "value": "3 months" },
+    { "label": "Maternity care", "value": "10 months" },
+    { "label": "Hernia, gallstones, tonsils", "value": "12 months" },
+    { "label": "Declared pre existing conditions", "value": "24 months" }
+  ],
+  "accordions": [
+    { "title": "How the family deductible works", "subtitle": "One figure per event, not per person", "body": "The deductible applies once per medical event, not once per family member. If two members are treated for the same event, you pay a single deductible." },
+    { "title": "Coverage while travelling", "subtitle": "Emergencies outside Mexico", "body": "Esencial and Premium cover emergencies abroad. Platino covers scheduled treatment worldwide, including the United States." }
+  ],
+  "perks": [
+    { "title": "Second medical opinion", "desc": "Included at no extra premium" },
+    { "title": "Telemedicine, 24 hours", "desc": "In English, unlimited consultations" },
+    { "title": "Lifetime renewal", "desc": "No re underwriting at renewal" }
+  ]
+}
