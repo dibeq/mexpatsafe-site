@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Insurance Proposal" description="Client-facing health insurance proposal. Carrier and individual/family aware via one CONFIG object" -->
+<helmet><script src="./ds-base.js"></script>
+<title>Your Health Insurance Proposal | Mexpat Safe</title>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<link rel="icon" type="image/svg+xml" href="assets/logos/mexpatsafe-logo-cross.svg">
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700&amp;family=DM+Sans:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',system-ui,sans-serif;color:#1F2937;background:#F4F6F9;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:#0F355B}a:hover{color:#D69828}
+:focus-visible{outline:3px solid #D69828;outline-offset:3px;border-radius:6px}
+summary::-webkit-details-marker{display:none}
+@keyframes reveal{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+[data-reveal]{animation:reveal .7s cubic-bezier(.22,.61,.36,1) both}
+@supports (animation-timeline:view()){[data-reveal]{animation-timeline:view();animation-range:entry 0% cover 22%}}
+details[open] [data-plus]{transform:rotate(45deg)}
+button[data-opt][aria-pressed="true"]{border-color:#D69828!important;background:#FEF9EC!important;box-shadow:0 0 0 3px rgba(214,152,40,.16)!important}
+button[data-opt][aria-pressed="true"] [data-dot]{background:#D69828;border-color:#D69828}
+button[data-opt][aria-pressed="true"] [data-tag]{color:#8a5f14}
+button[data-chip][aria-pressed="true"]{background:#0F355B!important;border-color:#0F355B!important;color:#fff!important}
+button[data-show="true"]{opacity:1!important;visibility:visible!important}
+nav a[aria-current="true"]{color:#F0B93A;background:rgba(240,185,58,.12)}
+td[data-sel="true"]{background:#FEF9EC}
+th[data-sel="true"]{background:#f6ecd8;color:#8a5f14}
+[data-bar]{transform:translateY(110%)}
+[data-bar][data-show="true"]{transform:translateY(0)}
+[data-scroll]{scrollbar-width:thin;scrollbar-color:#DDE3EC transparent}
+nav[data-scroll]{scrollbar-width:none;-ms-overflow-style:none;mask-image:linear-gradient(90deg,#000 0,#000 88%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,#000 0,#000 88%,transparent 100%)}
+nav[data-scroll]::-webkit-scrollbar{display:none}
+@keyframes splashpulse{0%,100%{opacity:.55}50%{opacity:1}}
+[data-splash][data-ready="true"]{opacity:0;visibility:hidden}
+@media (prefers-reduced-motion:reduce){[data-reveal]{animation:none}html{scroll-behavior:auto}*{transition:none!important}}
+@media print{[data-noprint]{display:none!important}body{background:#fff}[data-reveal]{animation:none}section,details,table{break-inside:avoid}
+[data-page]{display:none!important}[data-summary]{display:block!important}
+@page{size:letter portrait;margin:14mm}}
+</style>
+</helmet>
+
+<div data-splash="1" data-ready="{{ ready }}" data-noprint="1" style="position:fixed;inset:0;z-index:100;background:#F4F6F9;display:grid;place-items:center;gap:0;transition:opacity .45s ease,visibility .45s ease">
+  <span style="display:flex;flex-direction:column;align-items:center;gap:18px">
+    <img src="assets/logos/mexpatsafe-logo-blue.svg" alt="Mexpat Safe" style="width:210px;max-width:60vw;height:auto;display:block;animation:splashpulse 1.6s ease-in-out infinite">
+    <span style="font-size:10px;letter-spacing:2.2px;text-transform:uppercase;color:#8a97a6;font-weight:600">Loading your proposal</span>
+  </span>
+</div>
+
+<div data-page="1" style="background:#F4F6F9;padding-bottom:clamp(88px,14vw,120px)">
+
+  <div data-noprint="1" style="background:#07233D;position:sticky;top:0;z-index:30;box-shadow:0 6px 20px -16px rgba(7,35,61,.9)">
+    <div style="max-width:1100px;margin:0 auto;padding:10px 20px;min-height:68px;display:flex;align-items:center;gap:14px 20px;flex-wrap:wrap">
+      <a href="https://mexpatsafe.com" target="_blank" rel="noopener" data-cta-position="proposal-header-logo" style="display:flex;align-items:center;text-decoration:none;flex:none;transition:opacity .2s" style-hover="opacity:.75">
+        <img src="assets/logos/mexpatsafe-logo-white-gold-cross.svg" alt="Mexpat Safe" style="height:30px;width:auto;max-width:190px;display:block;font-size:0">
+      </a>
+      <div style="flex:1"></div>
+      <button type="button" onClick="{{ toTop }}" data-show="{{ barShow }}" aria-label="Back to top" style="cursor:pointer;font-family:'DM Sans',sans-serif;flex:none;display:inline-flex;align-items:center;gap:8px;background:transparent;border:1px solid rgba(255,255,255,.28);color:#9fb8d1;font-size:11px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:8px 13px;border-radius:8px;transition:opacity .25s,color .2s,border-color .2s,background .2s;opacity:0;visibility:hidden" style-hover="color:#F0B93A;border-color:rgba(240,185,58,.5);background:rgba(255,255,255,.06)">
+        <span aria-hidden="true" style="width:14px;height:14px;flex:none;background:currentColor;-webkit-mask:url(https://unpkg.com/lucide-static@latest/icons/arrow-up.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@latest/icons/arrow-up.svg) center/contain no-repeat"></span>
+        Top
+      </button>
+    </div>
+    <div style="height:2px;background:rgba(255,255,255,.08)">
+      <div role="presentation" ref="{{ progressRef }}" style="height:2px;background:#D69828;transform-origin:left center;transform:scaleX(0);will-change:transform"></div>
+    </div>
+  </div>
+
+  <header style="position:relative;background:#fff;color:#0F355B;padding:clamp(48px,8vw,84px) 0 clamp(44px,7vw,72px);overflow:hidden">
+    <img src="assets/images/stock/hero-couple.jpeg" alt="" style="position:absolute;top:0;right:0;height:100%;width:62%;object-fit:cover;object-position:72% 42%">
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,#fff 0%,#fff 42%,rgba(255,255,255,.82) 56%,rgba(255,255,255,0) 78%)"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,53,91,.28) 0%,rgba(15,53,91,.16) 45%,rgba(15,53,91,0) 80%)"></div>
+    <div style="position:relative;max-width:1100px;margin:0 auto;padding:0 20px;display:flex;flex-direction:column;gap:26px;align-items:flex-start">
+      <sc-if value="{{ carrier.isRedbridge }}">
+        <img src="assets/logos/partners/redbridge-insurance-logo.png" alt="Redbridge" style="width:300px;max-width:100%;height:auto;display:block">
+      </sc-if>
+      <sc-if value="{{ carrier.isBupa }}">
+        <img src="assets/logos/partners/bupa-logo-trimmed.png" alt="Bupa" style="width:120px;height:120px;display:block">
+      </sc-if>
+      <sc-if value="{{ carrier.isNyl }}">
+        <img src="assets/logos/partners/seguros-monterrey-nyl-logo.png" alt="Seguros Monterrey New York Life" style="width:300px;max-width:100%;height:auto;display:block">
+      </sc-if>
+
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <h1 style="font-family:'Lora',Georgia,serif;font-weight:600;color:#0F355B;font-size:clamp(30px,5.4vw,48px);line-height:1.14;letter-spacing:-.5px">Health Insurance Proposal</h1>
+        <span style="font-size:11px;letter-spacing:2.4px;text-transform:uppercase;color:#D69828;font-weight:600">{{ client.quoteDate }}</span>
+      </div>
+
+      <div style="background:#fff;border:1px solid #DDE3EC;border-left:3px solid #D69828;border-radius:14px;box-shadow:0 2px 12px rgba(15,53,91,.06);padding:20px 24px;display:flex;flex-direction:column;gap:14px;min-width:min(100%,340px)">
+        <div style="display:flex;flex-direction:column;gap:3px">
+          <span style="font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#8a97a6;font-weight:600">Prepared for</span>
+          <span style="font-family:'Lora',Georgia,serif;font-size:clamp(20px,2.6vw,25px);color:#0F355B;line-height:1.2;font-weight:600">{{ client.name }}<span style="font-family:'DM Sans',sans-serif;font-size:14px;color:#6B7280;font-weight:400"> · {{ client.age }}</span></span>
+        </div>
+        <sc-if value="{{ hasDependents }}" hint-placeholder-val="{{ false }}">
+          <div style="display:flex;flex-direction:column;gap:6px;padding-top:12px;border-top:1px solid #EEF1F5">
+            <span style="font-size:9.5px;letter-spacing:1.5px;text-transform:uppercase;color:#8a97a6;font-weight:600">Dependents</span>
+            <sc-for list="{{ dependents }}" as="dep" hint-placeholder-count="2">
+              <span style="display:flex;justify-content:space-between;gap:18px;font-size:14.5px;color:#1F2937">
+                <span>{{ dep.name }}<span style="color:#8a97a6"> · {{ dep.role }}</span></span>
+                <span style="color:#6B7280">{{ dep.age }}</span>
+              </span>
+            </sc-for>
+          </div>
+        </sc-if>
+        <div style="display:flex;align-items:center;gap:9px;padding-top:12px;border-top:1px solid #EEF1F5;font-size:14px;color:#6B7280">
+          <span aria-hidden="true" style="width:16px;height:16px;flex:none;background:#D69828;-webkit-mask:url(https://unpkg.com/lucide-static@latest/icons/map-pin.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@latest/icons/map-pin.svg) center/contain no-repeat"></span>
+          {{ client.location }}
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main style="max-width:1100px;margin:0 auto;padding:clamp(40px,6vw,72px) 20px 0;display:flex;flex-direction:column;gap:clamp(48px,7vw,84px)">
+
+    <section id="build" data-reveal="1" style="display:flex;flex-direction:column;gap:18px;scroll-margin-top:112px">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <h2 style="font-family:'Lora',Georgia,serif;font-weight:600;color:#0F355B;font-size:clamp(22px,2.8vw,28px)">Build your plan</h2>
+        <span style="font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:#D69828;font-weight:600">Annual premium · {{ carrier.currency }}</span>
+      </div>
+
+      <div style="background:#fff;border:1px solid #DDE3EC;border-radius:14px;box-shadow:0 2px 12px rgba(15,53,91,.06);overflow:hidden">
+
+        <div style="padding:24px 22px;display:flex;flex-direction:column;gap:16px">
+          <div style="display:flex;align-items:center;gap:11px">
+            <span style="width:24px;height:24px;border-radius:50%;background:#0F355B;color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;flex:none">1</span>
+            <span style="font-size:11.5px;letter-spacing:1.4px;text-transform:uppercase;color:#0F355B;font-weight:700">Choose your plan</span>
+          </div>
+          <div role="group" aria-label="Plan" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px">
+            <sc-for list="{{ planCards }}" as="p" hint-placeholder-count="3">
+              <button type="button" data-opt="plan" onClick="{{ p.select }}" aria-pressed="{{ p.pressed }}" style="cursor:pointer;font-family:inherit;text-align:left;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:5px;transition:border-color .2s,box-shadow .2s,transform .2s,background .2s;background:#fff;border:2px solid #DDE3EC;box-shadow:none" style-hover="transform:translateY(-2px);border-color:#F0B93A;box-shadow:0 10px 24px -16px rgba(15,53,91,.55)">
+                <div style="display:flex;align-items:center;justify-content:space-between;gap:10px">
+                  <span style="font-family:'Lora',Georgia,serif;font-size:18px;color:#0F355B;font-weight:600">{{ p.name }}</span>
+                  <span data-dot="1" aria-hidden="true" style="width:19px;height:19px;border-radius:50%;flex:none;display:grid;place-items:center;font-size:11px;color:#fff;transition:background .2s,border-color .2s;background:transparent;border:1.5px solid #c3cedb">{{ p.check }}</span>
+                </div>
+                <span style="font-size:13px;color:#6B7280"><b style="color:#0F355B;font-weight:600">{{ p.max }}</b> annual maximum</span>
+                <span style="font-size:13px;color:#6B7280">{{ p.net }}</span>
+                <span style="font-size:12px;color:#8a97a6;margin-top:5px;padding-top:8px;border-top:1px solid #EEF1F5;width:100%">from {{ p.from }} / year</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+
+        <div style="margin:0 12px 12px;background:#F7F9FC;border:1px solid #DDE3EC;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:11px">
+            <span style="width:24px;height:24px;border-radius:50%;background:#0F355B;color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;flex:none">2</span>
+            <span style="font-size:11.5px;letter-spacing:1.4px;text-transform:uppercase;color:#0F355B;font-weight:700">Choose your deductible</span>
+            <span style="font-size:12px;color:#6B7280;background:#fff;border:1px solid #DDE3EC;border-radius:50px;padding:3px 11px">for {{ planName }}</span>
+          </div>
+          <p style="font-size:13.5px;color:#6B7280;max-width:70ch;text-wrap:pretty">{{ dedNote }}</p>
+          <div role="group" aria-label="Deductible" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:10px">
+            <sc-for list="{{ dedCards }}" as="d" hint-placeholder-count="4">
+              <button type="button" data-opt="ded" onClick="{{ d.select }}" aria-pressed="{{ d.pressed }}" style="cursor:pointer;font-family:inherit;text-align:left;background:#fff;border-radius:14px;padding:14px 15px;display:flex;flex-direction:column;gap:4px;transition:border-color .2s,box-shadow .2s,transform .2s;border:2px solid #DDE3EC;box-shadow:none" style-hover="transform:translateY(-2px);border-color:#F0B93A;box-shadow:0 10px 24px -16px rgba(15,53,91,.55)">
+                <span style="font-family:'Lora',Georgia,serif;font-size:17px;color:#0F355B;font-weight:600">{{ d.label }}</span>
+                <span style="font-size:13.5px;font-weight:600;color:#1F2937">{{ d.price }} <span style="font-weight:400;color:#6B7280;font-size:12.5px">/ year</span></span>
+                <span data-tag="1" style="font-size:11px;letter-spacing:.6px;text-transform:uppercase;font-weight:600;min-height:17px;color:#8a97a6">{{ d.tag }}</span>
+              </button>
+            </sc-for>
+          </div>
+        </div>
+
+        <sc-if value="{{ isFamily }}" hint-placeholder-val="{{ false }}">
+        <div style="margin:0 12px 12px;background:#F7F9FC;border:1px solid #DDE3EC;border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:14px">
+          <div style="display:flex;flex-wrap:wrap;align-items:center;gap:11px">
+            <span style="width:24px;height:24px;border-radius:50%;background:#0F355B;color:#fff;font-size:11px;font-weight:700;display:grid;place-items:center;flex:none">3</span>
+            <span style="font-size:11.5px;letter-spacing:1.4px;text-transform:uppercase;color:#0F355B;font-weight:700">Who is included</span>
+          </div>
+          <div role="group" aria-label="Family members" style="display:flex;flex-wrap:wrap;gap:10px">
+            <sc-for list="{{ memberChips }}" as="m" hint-placeholder-count="2">
+              <button type="button" data-chip="1" onClick="{{ m.toggle }}" aria-pressed="{{ m.pressed }}" style="cursor:pointer;font-family:'DM Sans',sans-serif;font-weight:700;font-size:13px;border-radius:50px;padding:10px 16px;display:flex;flex-direction:column;line-height:1.2;text-align:left;transition:background .2s,color .2s,border-color .2s,transform .2s;border:1.5px solid #DDE3EC;background:#fff;color:#6B7280" style-hover="transform:translateY(-1px);border-color:#D69828">
+                {{ m.name }}<small style="font-weight:400;font-size:11px">{{ m.role }}</small>
+              </button>
+            </sc-for>
+          </div>
+          <div style="border-top:1px dashed #DDE3EC;padding-top:12px;display:flex;flex-direction:column;gap:6px">
+            <sc-for list="{{ memberLines }}" as="ml" hint-placeholder-count="2">
+              <div style="display:flex;justify-content:space-between;gap:12px;font-size:13.5px">
+                <span style="color:#1F2937;font-weight:600">{{ ml.name }}</span>
+                <span style="color:#0F355B;font-weight:700">{{ ml.value }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        </sc-if>
+
+        <div style="background:#0F355B;color:#fff;padding:24px 22px;display:flex;align-items:flex-end;justify-content:space-between;gap:18px;flex-wrap:wrap">
+          <div style="display:flex;flex-direction:column;gap:3px">
+            <span style="font-size:10.5px;letter-spacing:1.4px;text-transform:uppercase;color:#9fb8d1;font-weight:600">Your annual premium</span>
+            <span style="font-family:'Lora',Georgia,serif;font-size:clamp(30px,4.4vw,38px);line-height:1.1">{{ total }}</span>
+            <span style="font-size:13px;color:#bdd0e3">{{ summary }}</span>
+            <span style="font-size:12.5px;color:#9fb8d1">About {{ monthly }} a month</span>
+          </div>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <button type="button" onClick="{{ downloadPdf }}" data-cta-position="proposal-summary-pdf" style="cursor:pointer;font-family:'DM Sans',sans-serif;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45);font-weight:700;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;padding:14px 20px;border-radius:8px;transition:background .2s,border-color .2s,transform .2s;display:inline-flex;align-items:center;gap:10px" style-hover="background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-2px)">
+              <span aria-hidden="true" style="width:17px;height:17px;flex:none;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@latest/icons/download.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@latest/icons/download.svg) center/contain no-repeat"></span>
+              Download PDF
+            </button>
+            <a href="https://calendly.com/mexpatsafe-info/30min" target="_blank" rel="noopener" data-cta-position="proposal-summary" style="background:#D69828;color:#07233D;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;padding:14px 22px;border-radius:8px;transition:background .2s,transform .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:10px" style-hover="background:#F0B93A;transform:translateY(-2px);box-shadow:0 10px 22px -12px rgba(0,0,0,.6)">
+              <span aria-hidden="true" style="width:17px;height:17px;flex:none;background:#07233D;-webkit-mask:url(https://unpkg.com/lucide-static@latest/icons/calendar-check.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@latest/icons/calendar-check.svg) center/contain no-repeat"></span>
+              Book a call with Diego
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px">
+        <sc-for list="{{ perks }}" as="perk" hint-placeholder-count="3">
+        <div style="background:#fff;border:1px solid #DDE3EC;border-top:3px solid #D69828;border-radius:14px;padding:18px;display:flex;align-items:flex-start;gap:13px;box-shadow:0 2px 12px rgba(15,53,91,.06);transition:transform .2s,box-shadow .2s" style-hover="transform:translateY(-2px);box-shadow:0 12px 26px -18px rgba(15,53,91,.5)">
+          <span style="width:36px;height:36px;border-radius:10px;background:#EEF3F8;display:grid;place-items:center;flex:none">
+            <span aria-hidden="true" style="width:20px;height:20px;background:#0F355B;-webkit-mask:url(https://unpkg.com/lucide-static@latest/icons/shield-check.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@latest/icons/shield-check.svg) center/contain no-repeat"></span>
+          </span>
+          <span>
+            <span style="display:block;font-size:14.5px;font-weight:600;color:#0F355B">{{ perk.title }}</span>
+            <span style="display:block;font-size:12.5px;color:#6B7280;text-wrap:pretty">{{ perk.desc }}</span>
+          </span>
+        </div>
+        </sc-for>
+      </div>
+    </section>
+
+    <sc-if value="{{ showProviders }}" hint-placeholder-val="{{ true }}">
+    <section id="network" data-reveal="1" style="display:flex;flex-direction:column;gap:16px;scroll-margin-top:112px">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <h2 style="font-family:'Lora',Georgia,serif;font-weight:600;color:#0F355B;font-size:clamp(22px,2.8vw,28px)">Providers network</h2>
+        <span style="font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:#D69828;font-weight:600">{{ planName }}</span>
+      </div>
+
+      <div style="background:#fff;border:1px solid #DDE3EC;border-left:3px solid #D69828;border-radius:14px;padding:18px 20px;box-shadow:0 2px 12px rgba(15,53,91,.06)">
+        <div style="font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:#6B7280;font-weight:600">Network</div>
+        <div style="font-family:'Lora',Georgia,serif;font-size:20px;color:#0F355B;margin-top:4px;font-weight:600">{{ netUs }}</div>
+        <div style="font-size:13.5px;color:#6B7280;margin-top:5px;text-wrap:pretty">{{ netOon }}</div>
+      </div>
+
+      <div style="background:#fff;border:1px solid #DDE3EC;border-radius:14px;padding:22px;box-shadow:0 2px 12px rgba(15,53,91,.06)">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px">
+          <span style="background:#0F355B;color:#fff;font-size:10.5px;letter-spacing:1.2px;text-transform:uppercase;font-weight:600;padding:5px 12px;border-radius:50px">{{ hospBadge }}</span>
+          <span style="font-size:12.5px;color:#6B7280">{{ hospCount }}</span>
+        </div>
+        <ul style="list-style:none;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px 20px">
+          <sc-for list="{{ hospitals }}" as="h" hint-placeholder-count="6">
+            <li style="padding:8px 0 8px 18px;position:relative;font-size:14px;border-radius:6px;transition:background .2s" style-hover="background:#F7F9FC">
+              <span aria-hidden="true" style="position:absolute;left:2px;top:15px;width:6px;height:6px;border-radius:50%;background:#D69828"></span>
+              {{ h.name }}<br><span style="color:#6B7280;font-size:12.5px">{{ h.city }}</span>
+            </li>
+          </sc-for>
+        </ul>
+        <div style="margin-top:14px;padding-top:14px;border-top:1px solid #EEF1F5;font-size:13.5px;color:#6B7280;text-wrap:pretty">{{ hospFoot }}</div>
+        <a href="{{ carrier.directoryUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:10px;margin-top:16px;background:#0F355B;color:#fff;text-decoration:none;font-size:12px;font-weight:700;letter-spacing:1.1px;text-transform:uppercase;padding:13px 18px;border-radius:8px;transition:background .2s,transform .2s,box-shadow .2s" style-hover="background:#1A4A78;transform:translateY(-2px);box-shadow:0 10px 22px -14px rgba(15,53,91,.8);color:#fff">
+          <span aria-hidden="true" style="width:16px;height:16px;flex:none;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@latest/icons/search.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@latest/icons/search.svg) center/contain no-repeat"></span>
+          Search the full {{ carrier.name }} directory
+        </a>
+      </div>
+    </section>
+    </sc-if>
+
+    <sc-if value="{{ showComparison }}" hint-placeholder-val="{{ true }}">
+    <section id="covers" data-reveal="1" style="display:flex;flex-direction:column;gap:16px;scroll-margin-top:112px">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <h2 style="font-family:'Lora',Georgia,serif;font-weight:600;color:#0F355B;font-size:clamp(22px,2.8vw,28px)">What each plan covers</h2>
+        <span style="font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:#D69828;font-weight:600">Side by side</span>
+      </div>
+      <div data-scroll="1" style="background:#fff;border:1px solid #DDE3EC;border-radius:14px;overflow-x:auto;box-shadow:0 2px 12px rgba(15,53,91,.06)">
+        <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:600px">
+          <caption style="text-align:left;padding:16px 16px 0;font-size:12.5px;color:#8a97a6">Your current selection is highlighted in gold.</caption>
+          <thead>
+            <tr>
+              <th scope="col" style="text-align:left;padding:13px 16px;border-bottom:1px solid #DDE3EC;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:#6B7280;font-weight:600;background:#fff;position:sticky;left:0;z-index:1">Benefit</th>
+              <sc-for list="{{ planCols }}" as="pc" hint-placeholder-count="3">
+                <th scope="col" data-sel="{{ pc.sel }}" style="text-align:center;padding:13px 16px;border-bottom:1px solid #DDE3EC;font-size:12px;font-weight:600;background:#fbfcfd;color:#0F355B">{{ pc.label }}</th>
+              </sc-for>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ comparisonRows }}" as="row" hint-placeholder-count="8">
+              <tr style="transition:background .2s" style-hover="background:#F7F9FC">
+                <th scope="row" style="text-align:left;font-weight:500;padding:12px 16px;border-bottom:1px solid #EEF1F5;background:#fff;position:sticky;left:0">{{ row.label }}</th>
+                <sc-for list="{{ row.cells }}" as="cell" hint-placeholder-count="3">
+                  <td data-sel="{{ cell.sel }}" style="padding:12px 16px;border-bottom:1px solid #EEF1F5;text-align:center;font-weight:600;color:#0F355B;background:transparent">{{ cell.value }}</td>
+                </sc-for>
+              </tr>
+            </sc-for>
+            <tr>
+              <th scope="row" style="text-align:left;padding:16px;border-top:2px solid #0F355B;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#6B7280;font-weight:600;background:#fff;position:sticky;left:0">Annual premium</th>
+              <sc-for list="{{ premiumRow }}" as="pr" hint-placeholder-count="3">
+                <td data-sel="{{ pr.sel }}" style="padding:16px;border-top:2px solid #0F355B;text-align:center;font-family:'Lora',Georgia,serif;font-size:17px;color:#0F355B;background:transparent">{{ pr.value }}</td>
+              </sc-for>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    </sc-if>
+
+    <section id="waiting" data-reveal="1" style="display:flex;flex-direction:column;gap:16px;scroll-margin-top:112px">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <h2 style="font-family:'Lora',Georgia,serif;font-weight:600;color:#0F355B;font-size:clamp(22px,2.8vw,28px)">Waiting periods</h2>
+        <span style="font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:#D69828;font-weight:600">Everything else starts day one</span>
+      </div>
+      <div data-scroll="1" style="background:#fff;border:1px solid #DDE3EC;border-radius:14px;overflow-x:auto;box-shadow:0 2px 12px rgba(15,53,91,.06)">
+        <table style="width:100%;border-collapse:collapse;font-size:14px;min-width:420px">
+          <thead>
+            <tr>
+              <th scope="col" style="text-align:left;padding:13px 16px;border-bottom:1px solid #DDE3EC;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:#6B7280;font-weight:600;background:#fbfcfd">Condition or service</th>
+              <th scope="col" style="text-align:center;padding:13px 16px;border-bottom:1px solid #DDE3EC;font-size:11px;letter-spacing:.8px;text-transform:uppercase;color:#6B7280;font-weight:600;background:#fbfcfd">Waiting period</th>
+            </tr>
+          </thead>
+          <tbody>
+            <sc-for list="{{ waitingRows }}" as="w" hint-placeholder-count="5">
+              <tr style="transition:background .2s" style-hover="background:#F7F9FC">
+                <th scope="row" style="text-align:left;font-weight:500;padding:12px 16px;border-bottom:1px solid #EEF1F5">{{ w.label }}</th>
+                <td style="padding:12px 16px;border-bottom:1px solid #EEF1F5;text-align:center;font-weight:600;color:#0F355B">{{ w.value }}</td>
+              </tr>
+            </sc-for>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="detail" data-reveal="1" style="display:flex;flex-direction:column;gap:12px;scroll-margin-top:112px">
+      <h2 style="font-family:'Lora',Georgia,serif;font-weight:600;color:#0F355B;font-size:clamp(22px,2.8vw,28px)">Worth a closer look</h2>
+      <sc-for list="{{ accordions }}" as="acc" hint-placeholder-count="3">
+        <details style="background:#fff;border:1px solid #DDE3EC;border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(15,53,91,.06);transition:box-shadow .2s" style-hover="box-shadow:0 12px 26px -18px rgba(15,53,91,.5)">
+          <summary style="padding:18px 22px;cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px">
+            <span style="font-family:'Lora',Georgia,serif;font-size:17px;color:#0F355B;font-weight:600">{{ acc.title }}
+              <small style="display:block;font-family:'DM Sans',sans-serif;font-size:13px;color:#6B7280;font-weight:400;margin-top:3px">{{ acc.subtitle }}</small></span>
+            <span data-plus="1" aria-hidden="true" style="font-size:24px;color:#D69828;line-height:1;flex:none;transition:transform .25s cubic-bezier(.22,.61,.36,1)">+</span>
+          </summary>
+          <div style="padding:0 22px 22px">
+            <p style="color:#6B7280;font-size:14.5px;max-width:78ch;text-wrap:pretty">{{ acc.body }}</p>
+          </div>
+        </details>
+      </sc-for>
+    </section>
+
+    <section id="disclosure" data-reveal="1" style="display:flex;flex-direction:column;gap:16px;scroll-margin-top:112px">
+      <div style="display:flex;align-items:baseline;gap:12px;flex-wrap:wrap">
+        <h2 style="font-family:'Lora',Georgia,serif;font-weight:600;color:#0F355B;font-size:clamp(22px,2.8vw,28px)">What this policy is</h2>
+        <span style="font-size:10px;letter-spacing:1.3px;text-transform:uppercase;color:#D69828;font-weight:600">Read before you decide</span>
+      </div>
+      <div style="background:#fff;border:1px solid #DDE3EC;border-top:3px solid #b4262b;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:12px;box-shadow:0 2px 12px rgba(15,53,91,.06)">
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;padding-bottom:14px;border-bottom:1px solid #EEF1F5">
+          <span style="display:flex;flex-direction:column;line-height:1">
+            <span style="font-family:'Lora',Georgia,serif;font-size:22px;color:#b4262b;font-weight:700;letter-spacing:-.4px">{{ carrier.name }}</span>
+            <span style="font-size:8px;letter-spacing:1.8px;color:#8a97a6;text-transform:uppercase;margin-top:4px">{{ carrier.legalSuffix }}</span>
+          </span>
+          <span style="font-size:12px;color:#6B7280;letter-spacing:.4px">{{ carrier.ratingLine }}</span>
+        </div>
+        <h3 style="font-family:'Lora',Georgia,serif;font-size:17px;color:#0F355B;font-weight:600">{{ carrier.disclosureTitle }}</h3>
+        <p style="color:#6B7280;font-size:14.5px;max-width:80ch;text-wrap:pretty">{{ carrier.disclosureBody }}</p>
+        <p style="color:#6B7280;font-size:14.5px;max-width:80ch;text-wrap:pretty">Diego Beltrán, operating as Mexpat Safe, acts as an intermediary. All obligations relating to coverage and claims rest with {{ carrier.name }}. <a href="{{ carrier.disclosureUrl }}" target="_blank" rel="noopener" style="font-weight:600;text-decoration:underline;text-decoration-color:#D69828;text-underline-offset:3px;transition:color .2s">Read the full disclosure</a></p>
+        <p style="color:#8a97a6;font-size:12.5px;max-width:80ch;text-wrap:pretty">This proposal is for illustration only and is valid for 30 days from {{ client.quoteDate }}. It does not create an insurance contract. The {{ carrier.name }} policy conditions and Schedule of Benefits are the governing documents and prevail in case of any difference.</p>
+      </div>
+    </section>
+
+    <section id="next" data-reveal="1" style="display:flex;flex-direction:column;gap:14px;scroll-margin-top:112px">
+      <div style="position:relative;border-radius:14px;padding:clamp(30px,5vw,46px) 26px;color:#fff;text-align:center;overflow:hidden;background:#07233D">
+        <img src="assets/images/stock/doctor-patient-consult.jpeg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(158deg,rgba(7,35,61,.95),rgba(15,53,91,.88))"></div>
+        <div style="position:relative;display:flex;flex-direction:column;align-items:center">
+          <h2 style="font-family:'Lora',Georgia,serif;font-weight:600;color:#fff;font-size:clamp(22px,3.2vw,30px)">Ready to move forward?</h2>
+          <p style="color:#c3d3e5;margin:12px 0 24px;max-width:48ch;font-size:15.5px;text-wrap:pretty">The next step is a short application and a medical questionnaire. I will fill it out with you. Most people finish in under half an hour.</p>
+          <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+            <a href="https://calendly.com/mexpatsafe-info/30min" target="_blank" rel="noopener" data-cta-position="proposal-footer" style="background:#D69828;color:#07233D;padding:15px 26px;border-radius:8px;font-weight:700;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:background .2s,transform .2s,box-shadow .2s" style-hover="background:#F0B93A;transform:translateY(-2px);box-shadow:0 12px 26px -14px rgba(0,0,0,.7);color:#07233D">
+              <span aria-hidden="true" style="width:17px;height:17px;flex:none;background:#07233D;-webkit-mask:url(https://unpkg.com/lucide-static@latest/icons/calendar-check.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@latest/icons/calendar-check.svg) center/contain no-repeat"></span>
+              Book a free consultation
+            </a>
+            <a href="{{ waLink }}" target="_blank" rel="noopener" data-cta-position="proposal-footer" style="background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.45);padding:15px 26px;border-radius:8px;font-weight:700;font-size:13px;letter-spacing:1.2px;text-transform:uppercase;text-decoration:none;display:inline-flex;align-items:center;gap:10px;transition:background .2s,border-color .2s,transform .2s" style-hover="background:rgba(255,255,255,.1);border-color:#fff;transform:translateY(-2px);color:#fff">
+              <span aria-hidden="true" style="width:17px;height:17px;flex:none;background:#fff;-webkit-mask:url(https://unpkg.com/lucide-static@latest/icons/message-circle.svg) center/contain no-repeat;mask:url(https://unpkg.com/lucide-static@latest/icons/message-circle.svg) center/contain no-repeat"></span>
+              Ask on WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;align-items:center;gap:16px;background:#fff;border:1px solid #DDE3EC;border-left:3px solid #D69828;border-radius:14px;padding:18px 20px;box-shadow:0 2px 12px rgba(15,53,91,.06)">
+        <img src="assets/images/diego-beltran-agent.webp" alt="Diego Beltrán" style="width:60px;height:60px;border-radius:50%;object-fit:cover;flex:none;background:#0F355B">
+        <span>
+          <span style="display:block;font-weight:600;color:#0F355B;font-size:15.5px">Diego Beltrán</span>
+          <span style="display:block;font-size:13.5px;color:#6B7280">Director, Mexpat Safe · <a href="mailto:info@mexpatsafe.com" data-cta-position="proposal-signature" style="font-weight:600">info@mexpatsafe.com</a></span>
+          <span style="display:block;font-size:13px;color:#8a97a6;margin-top:2px">Licensed insurance agent · CNSF Y40634</span>
+        </span>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding:clamp(34px,5vw,54px) 20px 44px;text-align:center;color:#6B7280;font-size:12.5px;line-height:1.8">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <img src="assets/logos/mexpatsafe-logo-blue.svg" alt="Mexpat Safe" style="height:26px;width:auto;max-width:180px;display:block;opacity:.75;font-size:0">
+      <div>Global protection, local peace of mind.</div>
+      <div>This proposal is private and prepared for {{ client.name }}. Please do not share the link.</div>
+    </div>
+  </footer>
+
+  <div data-noprint="1" data-bar="1" data-show="{{ barShow }}" style="position:fixed;left:0;right:0;bottom:0;z-index:40;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-top:1px solid #DDE3EC;box-shadow:0 -8px 24px -18px rgba(15,53,91,.5);transition:transform .3s cubic-bezier(.22,.61,.36,1)">
+    <div style="max-width:1100px;margin:0 auto;padding:11px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px 18px;flex-wrap:wrap">
+      <div style="display:flex;flex-direction:column;min-width:0">
+        <span style="font-size:10px;letter-spacing:1.2px;text-transform:uppercase;color:#8a97a6;font-weight:600">Your selection</span>
+        <span style="font-size:13.5px;color:#0F355B;font-weight:600">{{ summary }}</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
+        <span style="font-family:'Lora',Georgia,serif;font-size:24px;color:#0F355B">{{ total }}<span style="font-family:'DM Sans',sans-serif;font-size:12.5px;color:#6B7280;font-weight:400"> / year</span></span>
+        <a href="#build" style="background:#0F355B;color:#fff;text-decoration:none;font-weight:700;font-size:12px;letter-spacing:1.1px;text-transform:uppercase;padding:12px 18px;border-radius:8px;transition:background .2s,transform .2s" style-hover="background:#1A4A78;transform:translateY(-2px);color:#fff">Change plan</a>
+        <a href="https://calendly.com/mexpatsafe-info/30min" target="_blank" rel="noopener" data-cta-position="proposal-stickybar" style="background:#D69828;color:#07233D;text-decoration:none;font-weight:700;font-size:12px;letter-spacing:1.1px;text-transform:uppercase;padding:12px 18px;border-radius:8px;transition:background .2s,transform .2s" style-hover="background:#F0B93A;transform:translateY(-2px);color:#07233D">Book a call</a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div data-summary="1" style="display:none;color:#1F2937;font-family:'DM Sans',sans-serif">
+  <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding-bottom:14px;border-bottom:2px solid #0F355B">
+    <div style="display:flex;flex-direction:column;gap:4px">
+      <img src="assets/logos/mexpatsafe-logo-blue.svg" alt="Mexpat Safe" style="width:150px;height:auto;display:block">
+      <span style="font-size:9pt;color:#6B7280">Global protection, local peace of mind.</span>
+    </div>
+    <div style="text-align:right;display:flex;flex-direction:column;gap:2px">
+      <span style="font-family:'Lora',Georgia,serif;font-size:15pt;color:#0F355B;font-weight:600">Health Insurance Proposal</span>
+      <span style="font-size:9pt;color:#6B7280">{{ carrier.name }} · {{ client.quoteDate }} · Ref {{ client.ref }}</span>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:28px;flex-wrap:wrap;margin-top:14px;font-size:10pt">
+    <div style="display:flex;flex-direction:column">
+      <span style="font-size:7.5pt;letter-spacing:1.2px;text-transform:uppercase;color:#8a97a6;font-weight:600">Prepared for</span>
+      <span style="font-weight:600;color:#0F355B">{{ client.name }} · {{ client.age }}</span>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <span style="font-size:7.5pt;letter-spacing:1.2px;text-transform:uppercase;color:#8a97a6;font-weight:600">Location</span>
+      <span>{{ client.location }}</span>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <span style="font-size:7.5pt;letter-spacing:1.2px;text-transform:uppercase;color:#8a97a6;font-weight:600">Effective</span>
+      <span>{{ client.effectiveDate }}</span>
+    </div>
+    <div style="display:flex;flex-direction:column">
+      <span style="font-size:7.5pt;letter-spacing:1.2px;text-transform:uppercase;color:#8a97a6;font-weight:600">Currency</span>
+      <span>{{ carrier.currency }} per year</span>
+    </div>
+  </div>
+
+  <sc-if value="{{ hasDependents }}">
+    <div style="margin-top:12px;font-size:10pt">
+      <span style="font-size:7.5pt;letter-spacing:1.2px;text-transform:uppercase;color:#8a97a6;font-weight:600;display:block">Dependents</span>
+      <sc-for list="{{ dependents }}" as="dep" hint-placeholder-count="2">
+        <span style="display:inline-block;margin-right:18px">{{ dep.name }} · {{ dep.role }} · {{ dep.age }}</span>
+      </sc-for>
+    </div>
+  </sc-if>
+
+  <div style="margin-top:20px">
+    <span style="font-family:'Lora',Georgia,serif;font-size:12pt;color:#0F355B;font-weight:600">Premium by plan and deductible</span>
+    <table style="width:100%;border-collapse:collapse;font-size:10pt;margin-top:8px">
+      <thead>
+        <tr>
+          <th scope="col" style="text-align:left;padding:8px 10px;background:#F4F6F9;border:1px solid #DDE3EC;font-size:7.5pt;letter-spacing:1px;text-transform:uppercase;color:#6B7280">Deductible</th>
+          <sc-for list="{{ sheetCols }}" as="sc" hint-placeholder-count="3">
+            <th scope="col" style="text-align:center;padding:8px 10px;background:#F4F6F9;border:1px solid #DDE3EC;color:#0F355B">
+              <span style="font-family:'Lora',Georgia,serif;font-size:11pt;font-weight:600;display:block">{{ sc.name }}</span>
+              <span style="font-size:8pt;color:#6B7280;font-weight:400">{{ sc.max }} max · {{ sc.net }}</span>
+            </th>
+          </sc-for>
+        </tr>
+      </thead>
+      <tbody>
+        <sc-for list="{{ sheetRows }}" as="sr" hint-placeholder-count="4">
+          <tr>
+            <th scope="row" style="text-align:left;padding:8px 10px;border:1px solid #DDE3EC;font-weight:500;color:#6B7280;font-size:9pt">Tier {{ sr.tier }}</th>
+            <sc-for list="{{ sr.cells }}" as="cell" hint-placeholder-count="3">
+              <td data-sel="{{ cell.sel }}" style="padding:8px 10px;border:1px solid #DDE3EC;text-align:center">
+                <span style="display:block;font-size:8.5pt;color:#6B7280">{{ cell.label }}</span>
+                <span style="display:block;font-weight:600;color:#0F355B">{{ cell.price }}</span>
+              </td>
+            </sc-for>
+          </tr>
+        </sc-for>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:18px;border:1px solid #DDE3EC;border-left:3px solid #D69828;padding:14px 16px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap">
+    <div style="display:flex;flex-direction:column;gap:2px">
+      <span style="font-size:7.5pt;letter-spacing:1.2px;text-transform:uppercase;color:#8a97a6;font-weight:600">Your selection</span>
+      <span style="font-size:11pt;color:#0F355B;font-weight:600">{{ summary }}</span>
+      <span style="font-size:9pt;color:#6B7280">About {{ monthly }} a month</span>
+    </div>
+    <div style="text-align:right">
+      <span style="font-size:7.5pt;letter-spacing:1.2px;text-transform:uppercase;color:#8a97a6;font-weight:600;display:block">Annual premium</span>
+      <span style="font-family:'Lora',Georgia,serif;font-size:20pt;color:#0F355B">{{ total }}</span>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;font-size:8.5pt;color:#6B7280;line-height:1.55">
+    <p>Diego Beltrán, Mexpat Safe · info@mexpatsafe.com · Licensed insurance agent, CNSF Y40634. Diego Beltrán acts as an intermediary. All obligations relating to coverage and claims rest with {{ carrier.name }}.</p>
+    <p style="margin-top:6px">This summary is for illustration only and is valid for 30 days from {{ client.quoteDate }}. It does not create an insurance contract. The {{ carrier.name }} policy conditions and Schedule of Benefits are the governing documents and prevail in case of any difference.</p>
+  </div>
+</div>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#07233D"/><rect x="30" y="26" width="40" height="48" rx="6" fill="#fff"/><path d="M50 38v24M38 50h24" stroke="#D69828" stroke-width="6" stroke-linecap="round"/></svg></template>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;carrier&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;redbridge&quot;,&quot;bupa&quot;,&quot;nyl&quot;],&quot;default&quot;:&quot;redbridge&quot;,&quot;tsType&quot;:&quot;'redbridge' | 'bupa' | 'nyl'&quot;,&quot;section&quot;:&quot;Proposal&quot;},&quot;scope&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;individual&quot;,&quot;family&quot;],&quot;default&quot;:&quot;individual&quot;,&quot;tsType&quot;:&quot;'individual' | 'family'&quot;,&quot;section&quot;:&quot;Proposal&quot;},&quot;showProviders&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;},&quot;showComparison&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Sections&quot;}}">
+const money = n => '$' + Number(n).toLocaleString('en-US');
+
+// ── CARRIER PRESETS ── auto-selected by CONFIG.carrierKey; add a new key here for a new insurer.
+// NOTE: the wordmark color (header pill + disclosure block) and the disclosure top-border color are
+// literal in the template (style holes cannot carry static per-carrier theme values). When copying this
+// file for a non-Redbridge carrier, also find/replace the two literal "#b4262b" colors in the template
+// to match this carrier's wordmarkColor / disclosureAccent below.
+const CARRIERS = {
+  redbridge: {
+    name: 'Redbridge', legalSuffix: 'Insurance Company, Ltd.', wordmarkColor: '#b4262b',
+    logo: 'assets/logos/partners/redbridge-insurance-logo.png',
+    currency: 'USD', disclosureAccent: '#b4262b', ratingLine: 'Carrier · AM Best B++ (Good) · Barbados',
+    disclosureTitle: 'An offshore policy, and what that means',
+    disclosureBody: "All plans are issued by Redbridge Insurance Company, Ltd., domiciled in Barbados and administered by Redbridge Group, LLC in Coral Gables, Florida. The policy is regulated under the laws of Barbados, and disputes are resolved there. Premiums are quoted and paid in US dollars and are not deductible for Mexican income tax. Pre-existing conditions must be declared and approved at application to be covered.",
+    disclosureUrl: 'https://mexpatsafe.com/redbridge-disclosure.html',
+    directoryUrl: 'https://www.redbridgeinsurance.com/index.php?option=com_content&view=article&id=213&Itemid=1396&lang=en'
+  },
+  bupa: {
+    name: 'Bupa', legalSuffix: 'México Compañía de Seguros, S.A. de C.V.', wordmarkColor: '#0F355B',
+    logo: 'assets/logos/partners/bupa-logo.png',
+    currency: 'MXN', disclosureAccent: '#D69828', ratingLine: 'Carrier · Authorized Bupa partner · Mexico',
+    disclosureTitle: 'A Mexican national policy, and what that means',
+    disclosureBody: 'This quote is informational only; it does not constitute an insurance application or an offer to insure under Article 5 of the Mexican Insurance Contract Law. Policy issuance is subject to Bupa México\u2019s risk assessment. Rates are valid as of the quote date shown above.',
+    disclosureUrl: 'https://mexpatsafe.com/privacy.html',
+    directoryUrl: 'https://mexpatsafe.com/plans.html'
+  },
+  nyl: {
+    name: 'Seguros Monterrey New York Life', legalSuffix: 'Seguros Monterrey New York Life, S.A. de C.V.', wordmarkColor: '#0F355B',
+    currency: 'MXN', disclosureAccent: '#D69828', ratingLine: 'Carrier · Seguros Monterrey New York Life · Mexico',
+    disclosureTitle: 'A Mexican national policy, and what that means',
+    disclosureBody: 'This quote is informational only and does not constitute an insurance application. Policy issuance is subject to underwriting review by Seguros Monterrey New York Life. NOTE: no real visual or brand reference for this carrier has been supplied yet to this design system. Verify logo, exact legal name and disclosure wording before sending a real proposal.',
+    disclosureUrl: 'https://mexpatsafe.com/privacy.html',
+    directoryUrl: 'https://mexpatsafe.com/plans.html'
+  }
+};
+
+// ── DUMMY SAMPLE CONFIG ── replace entirely with the real quote's data per proposal.
+// Structure only. No real client data ships in this template.
+const CONFIG = {
+  carrierKey: 'redbridge',
+  analytics: {
+    ga4Id: 'G-F5ZNZMM6CY',       // GA4 measurement ID
+    adsId: null,                 // 'AW-XXXXXXXXX' — Google Ads account
+    adsConversionLabel: null,    // 'AW-XXXXXXXXX/AbCdEfGhIj' — the PDF download conversion
+    pdfEvent: 'download_proposal_pdf' // GA4 key event name
+  },
+  client: { name: 'Alex Morgan', firstName: 'Alex', age: '52 years old', location: 'Sample City, Mexico', ref: 'PQH00000000', quoteDate: 'January 1, 2027', effectiveDate: 'February 1, 2027' },
+  scope: 'individual', // 'individual' | 'family'
+  members: [ // only used when scope === 'family'; priceFactor multiplies each plan's price for that member
+    { id: 'primary', name: 'Alex', role: 'Policyholder', age: '52', priceFactor: 1 },
+    { id: 'spouse', name: 'Jamie', role: 'Spouse', age: '49', priceFactor: 0.86 }
+  ],
+  plans: {
+    order: ['special', 'max', 'ultra'],
+    byKey: {
+      special: { name: 'Plan Special', max: '$3,000,000', net: 'Solutions Network', oon: 'Out of network: 70% of covered costs. Emergency hospitalization: 100%.', hospBadge: 'Solutions Network', hospCount: '276 hospitals', deds: [{ l: '$500 / $1,000', p: 6206 }, { l: '$1,000 / $2,000', p: 5617 }, { l: '$2,000 / $3,000', p: 4436 }, { l: '$5,000', p: 3572 }], def: 2, split: true },
+      max: { name: 'Plan Max', max: '$5,000,000', net: 'Preferred Network', oon: 'Out of network: 70% of covered costs. Emergency hospitalization: 100%.', hospBadge: 'Preferred Network', hospCount: '356 hospitals', deds: [{ l: '$500', p: 9160 }, { l: '$1,000', p: 8267 }, { l: '$2,000', p: 6484 }, { l: '$5,000', p: 5150 }], def: 2, split: false },
+      ultra: { name: 'Plan Ultra', max: '$7,000,000', net: 'Free choice', oon: 'No network on this plan. Any hospital or specialist, at 100%.', hospBadge: 'Free choice', hospCount: 'No restriction', deds: [{ l: '$500 / $1,000', p: 13929 }, { l: '$1,000 / $2,000', p: 12866 }, { l: '$2,000 / $3,000', p: 10736 }, { l: '$5,000', p: 7858 }], def: 2, split: true }
+    }
+  },
+  hospitals: [{ name: 'Sample General Hospital', city: 'Sample City' }, { name: 'Sample Medical Center', city: 'Sample City' }],
+  hospFoot: 'Replace this list and note with the real quote\u2019s provider network before sending.',
+  comparisonRows: [ // one row per benefit; values array must match plans.order length
+    { label: 'Hospital room', values: ['Standard', 'Standard', 'Private plus suite'] },
+    { label: 'Surgery, ICU, physician fees', values: ['100%', '100%', '100%'] },
+    { label: 'Cancer treatment', values: ['100%', '100%', '100%'] }
+  ],
+  waitingRows: [{ label: 'Preventive and routine check up', value: '3 months' }, { label: 'Maternity care', value: '10 months' }],
+  accordions: [{ title: 'Sample benefit detail', subtitle: 'Replace with the real quote\u2019s rider detail', body: 'Placeholder body text. Never invent real coverage figures; ask for the source data if the quote is missing this section.' }],
+  perks: [
+    { title: 'Sample included perk', desc: 'Included at no extra premium' }
+  ]
+};
+
+// ── ANALYTICS ── all IDs live in CONFIG.analytics below. Nothing else to edit.
+function loadGtag(a) {
+  if (!a || (!a.ga4Id && !a.adsId) || window.__gtagLoaded) return;
+  window.__gtagLoaded = true;
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  const s = document.createElement('script');
+  s.async = true;
+  s.src = 'https://www.googletagmanager.com/gtag/js?id=' + (a.ga4Id || a.adsId);
+  document.head.appendChild(s);
+  window.gtag('js', new Date());
+  if (a.ga4Id) window.gtag('config', a.ga4Id);
+  if (a.adsId) window.gtag('config', a.adsId);
+}
+
+function trackPdfDownload(a, payload) {
+  try {
+    const name = (a && a.pdfEvent) || 'download_proposal_pdf';
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event: name, ...payload });
+    if (typeof window.gtag === 'function') {
+      window.gtag('event', name, payload);
+      if (a && a.adsConversionLabel) {
+        window.gtag('event', 'conversion', { send_to: a.adsConversionLabel, value: payload.premium_value, currency: payload.currency });
+      }
+    }
+  } catch (e) { /* analytics must never block the download */ }
+}
+
+const SECTIONS = [
+  { id: 'build', label: 'Your plan' },
+  { id: 'network', label: 'Network' },
+  { id: 'covers', label: 'Coverage' },
+  { id: 'waiting', label: 'Waiting' },
+  { id: 'detail', label: 'Detail' },
+  { id: 'disclosure', label: 'Disclosure' },
+  { id: 'next', label: 'Next step' }
+];
+
+class Component extends DCLogic {
+  state = {
+    plan: CONFIG.plans.order[0],
+    ded: CONFIG.plans.byKey[CONFIG.plans.order[0]].def,
+    bar: false,
+    active: 'build',
+    members: Object.fromEntries((CONFIG.members || []).map(m => [m.id, true]))
+  };
+
+  progressRef = React.createRef();
+
+  // The live quote: a JSON file per client at p/<slug>.json, selected by ?q=<slug>.
+  // No parameter (or a missing file) falls back to the sample CONFIG in this file.
+  cfg() { return this.state.cfg || CONFIG; }
+
+  loadQuote() {
+    const q = (new URLSearchParams(location.search).get('q') || '').trim();
+    if (!/^[a-z0-9][a-z0-9._-]{0,80}$/i.test(q)) return Promise.resolve();
+    return fetch('p/' + q + '.json', { cache: 'no-store' })
+      .then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+      .then(json => {
+        const cfg = { ...CONFIG, ...json, client: { ...CONFIG.client, ...(json.client || {}) }, analytics: { ...CONFIG.analytics, ...(json.analytics || {}) } };
+        const first = cfg.plans.order[0];
+        this.setState({
+          cfg,
+          plan: first,
+          ded: cfg.plans.byKey[first].def,
+          members: Object.fromEntries((cfg.members || []).map(m => [m.id, true]))
+        });
+      })
+      .catch(e => { console.warn('Quote ' + q + ' could not be loaded, showing the sample data.', e); });
+  }
+
+  componentDidMount() {
+    loadGtag(CONFIG.analytics);
+    const done = () => { this.splashTimer = setTimeout(() => this.setState({ ready: true }), 250); };
+    const fonts = (document.fonts && document.fonts.ready) ? document.fonts.ready : Promise.resolve();
+    Promise.all([this.loadQuote(), fonts]).then(done).catch(done);
+    let queued = false;
+    this.onScroll = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => {
+        queued = false;
+        const doc = document.documentElement;
+        const span = doc.scrollHeight - window.innerHeight;
+        const ratio = span > 0 ? Math.min(1, Math.max(0, window.scrollY / span)) : 0;
+        if (this.progressRef.current) this.progressRef.current.style.transform = 'scaleX(' + ratio + ')';
+        const build = document.getElementById('build');
+        const bar = build ? build.getBoundingClientRect().bottom < 40 : false;
+        let active = this.state.active;
+        for (const s of SECTIONS) {
+          const el = document.getElementById(s.id);
+          if (el && el.getBoundingClientRect().top <= 160) active = s.id;
+        }
+        if (bar !== this.state.bar || active !== this.state.active) this.setState({ bar, active });
+      });
+    };
+    window.addEventListener('scroll', this.onScroll, { passive: true });
+    window.addEventListener('resize', this.onScroll, { passive: true });
+    this.onScroll();
+  }
+  componentWillUnmount() {
+    clearTimeout(this.splashTimer);
+    window.removeEventListener('scroll', this.onScroll);
+    window.removeEventListener('resize', this.onScroll);
+  }
+
+  renderVals() {
+    const CONFIG = this.cfg(); // shadows the sample data with the loaded quote
+    // A loaded quote always wins; the tweaks only steer the sample data.
+    const loaded = this.state.cfg;
+    const carrierKey = (loaded && loaded.carrierKey) || this.props.carrier || CONFIG.carrierKey;
+    const carrier = CARRIERS[carrierKey] || CARRIERS[CONFIG.carrierKey];
+    const client = CONFIG.client;
+    const isFamily = (loaded ? loaded.scope : (this.props.scope || CONFIG.scope)) === 'family';
+    const key = this.state.plan, p = CONFIG.plans.byKey[key];
+    const idx = Math.min(this.state.ded, p.deds.length - 1);
+    const d = p.deds[idx];
+    const cheapest = Math.min.apply(null, p.deds.map(x => x.p));
+    const dearest = Math.max.apply(null, p.deds.map(x => x.p));
+
+    const planCards = CONFIG.plans.order.map(k => {
+      const pl = CONFIG.plans.byKey[k], on = k === key;
+      return {
+        name: pl.name, max: pl.max, net: pl.net,
+        from: money(Math.min.apply(null, pl.deds.map(x => x.p))),
+        pressed: on ? 'true' : 'false', check: on ? '\u2713' : '',
+        select: () => this.setState({ plan: k, ded: CONFIG.plans.byKey[k].def })
+      };
+    });
+
+    const dedCards = p.deds.map((x, i) => {
+      const on = i === idx;
+      return {
+        label: x.l, price: money(x.p), pressed: on ? 'true' : 'false',
+        tag: x.p === cheapest ? 'Lowest premium' : (x.p === dearest ? 'Lowest out of pocket' : (i === p.def ? 'Most chosen' : '')),
+        select: () => this.setState({ ded: i })
+      };
+    });
+
+    const members = CONFIG.members || [];
+    const activeMembers = members.filter(m => this.state.members[m.id]);
+    const memberChips = members.map(m => {
+      const on = !!this.state.members[m.id];
+      return {
+        name: m.name, role: m.role, pressed: on ? 'true' : 'false',
+        toggle: () => this.setState({ members: { ...this.state.members, [m.id]: !on } })
+      };
+    });
+    const memberTotal = isFamily ? activeMembers.reduce((s, m) => s + d.p * m.priceFactor, 0) : d.p;
+    const memberLines = isFamily ? activeMembers.map(m => ({ name: m.name, value: money(Math.round(d.p * m.priceFactor)) })) : [];
+
+    const planCols = CONFIG.plans.order.map(k => {
+      const on = k === key;
+      return { label: CONFIG.plans.byKey[k].name, sel: on ? 'true' : 'false' };
+    });
+    const comparisonRows = CONFIG.comparisonRows.map(row => ({
+      label: row.label,
+      cells: row.values.map((v, i) => ({ value: v, sel: CONFIG.plans.order[i] === key ? 'true' : 'false' }))
+    }));
+    const premiumRow = CONFIG.plans.order.map(k => {
+      const pl = CONFIG.plans.byKey[k];
+      const dd = pl.deds[Math.min(pl.def, pl.deds.length - 1)];
+      return { value: money(dd.p), sel: k === key ? 'true' : 'false' };
+    });
+
+    const total = Math.round(memberTotal);
+
+    const dependents = isFamily ? members.filter(m => m.id !== 'primary').map(m => ({ name: m.name, role: m.role, age: m.age ? m.age + ' yrs' : '' })) : [];
+
+    const maxTiers = Math.max.apply(null, CONFIG.plans.order.map(k => CONFIG.plans.byKey[k].deds.length));
+    const sheetCols = CONFIG.plans.order.map(k => {
+      const pl = CONFIG.plans.byKey[k];
+      return { name: pl.name, max: pl.max, net: pl.net };
+    });
+    const sheetRows = Array.from({ length: maxTiers }, (_, i) => ({
+      tier: i + 1,
+      cells: CONFIG.plans.order.map(k => {
+        const pl = CONFIG.plans.byKey[k], dd = pl.deds[i];
+        return dd
+          ? { label: dd.l, price: money(dd.p), sel: (k === key && i === idx) ? 'true' : 'false' }
+          : { label: '\u2014', price: '', sel: 'false' };
+      })
+    }));
+
+    return {
+      ready: this.state.ready ? 'true' : 'false',
+      sheetCols, sheetRows,
+      downloadPdf: () => {
+        trackPdfDownload(CONFIG.analytics, {
+          carrier: carrier.name, plan: p.name, deductible: d.l,
+          premium_value: Math.round(memberTotal), currency: carrier.currency,
+          client_ref: client.ref
+        });
+        window.print();
+      },
+      client,
+      carrier: { ...carrier, isRedbridge: carrier.name === 'Redbridge', isBupa: carrier.name === 'Bupa', isNyl: carrier.name.indexOf('Monterrey') > -1 },
+      isFamily, dependents, hasDependents: dependents.length > 0,
+      toTop: () => window.scrollTo({ top: 0, behavior: 'smooth' }),
+      showProviders: this.props.showProviders !== false,
+      showComparison: this.props.showComparison !== false,
+      planCards, dedCards, memberChips, memberLines,
+      planName: p.name,
+      dedNote: p.split
+        ? 'Two figures means two deductibles: one for care close to home, one for care abroad. A higher deductible lowers your premium.'
+        : 'A single deductible figure applies worldwide. A higher deductible lowers your premium.',
+      total: money(total),
+      monthly: money(Math.round(total / 12)),
+      summary: p.name + ' \u00b7 ' + d.l + ' deductible' + (isFamily ? ' \u00b7 ' + activeMembers.length + ' covered' : ''),
+      heroChips: [
+        { label: 'Annual maximum', value: p.max },
+        { label: 'Deductible', value: d.l },
+        { label: 'Premium per year', value: money(total) }
+      ],
+      netUs: p.net, netOon: p.oon,
+      hospBadge: p.hospBadge, hospCount: p.hospCount, hospitals: CONFIG.hospitals, hospFoot: CONFIG.hospFoot,
+      planCols, comparisonRows, premiumRow,
+      waitingRows: CONFIG.waitingRows, accordions: CONFIG.accordions,
+      perks: CONFIG.perks,
+      navLinks: SECTIONS.map(s => ({ label: s.label, href: '#' + s.id, current: s.id === this.state.active ? 'true' : 'false' })),
+      progressRef: this.progressRef,
+      barShow: this.state.bar ? 'true' : 'false',
+      waLink: 'https://wa.me/522221285374?text=Hi%20Diego%2C%20I%27ve%20reviewed%20my%20proposal%20and%20have%20a%20question.',
+    };
+  }
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+:root{
+/* base palette — from mexpatsafe-site/assets/styles.css */
+--navy:#0F355B;
+--navy-deep:#07233D;
+--navy-mid:#1A4A78;
+--navy-soft:#E8EEF4;
+--gold:#D69828;
+--gold-light:#F0B93A;
+--gold-pale:#FEF9EC;
+--gray-bg:#F4F6F9;
+--gray-light:#EEF1F5;
+--gray-mid:#DDE3EC;
+--gray:#6B7280;
+--dark:#1F2937;
+--white:#FFFFFF;
+--green-whatsapp:#25D366;
+
+/* semantic aliases */
+--color-primary:var(--navy);
+--color-primary-deep:var(--navy-deep);
+--color-primary-mid:var(--navy-mid);
+--color-accent:var(--gold);
+--color-accent-hover:var(--gold-light);
+--color-accent-subtle:var(--gold-pale);
+--surface-page:var(--white);
+--surface-muted:var(--gray-bg);
+--surface-sunken:var(--gray-light);
+--surface-navy-soft:var(--navy-soft);
+--border-default:var(--gray-mid);
+--text-heading:var(--navy);
+--text-body:var(--gray);
+--text-body-strong:var(--dark);
+--text-on-dark:rgba(255,255,255,0.85);
+--text-on-dark-muted:rgba(255,255,255,0.55);
+--action-whatsapp:var(--green-whatsapp);
+}
