@@ -1,0 +1,90 @@
+{
+  "carrierKey": "nyl",
+  "scope": "individual",
+  "client": {
+    "name": "Michael Reyes",
+    "firstName": "Michael",
+    "age": "44 years old",
+    "location": "Mérida, Yucatán",
+    "ref": "SMNYL20260903M",
+    "quoteDate": "September 3, 2026",
+    "effectiveDate": "October 15, 2026"
+  },
+  "members": [],
+  "plans": {
+    "order": ["alta", "prisma", "prismaplus"],
+    "byKey": {
+      "alta": {
+        "name": "Alta Especialidad",
+        "max": "$2,000,000",
+        "net": "Red Monterrey",
+        "oon": "Out of network: 70% of covered costs. Emergency hospitalization: 100%.",
+        "hospBadge": "Red Monterrey",
+        "hospCount": "150 hospitals",
+        "deds": [
+          { "l": "$20,000 MXN", "p": 32400 },
+          { "l": "$40,000 MXN", "p": 27600 },
+          { "l": "$80,000 MXN", "p": 22100 }
+        ],
+        "def": 1,
+        "split": false
+      },
+      "prisma": {
+        "name": "Prisma",
+        "max": "$6,000,000",
+        "net": "Red Preferente",
+        "oon": "Out of network: 80% of covered costs. Emergency hospitalization: 100%.",
+        "hospBadge": "Red Preferente",
+        "hospCount": "215 hospitals",
+        "deds": [
+          { "l": "$20,000 MXN", "p": 46800 },
+          { "l": "$40,000 MXN", "p": 39500 },
+          { "l": "$80,000 MXN", "p": 33200 }
+        ],
+        "def": 1,
+        "split": false
+      },
+      "prismaplus": {
+        "name": "Prisma Plus",
+        "max": "$14,000,000",
+        "net": "Free choice",
+        "oon": "No network on this plan. Any hospital or specialist, at 100%.",
+        "hospBadge": "Free choice",
+        "hospCount": "No restriction",
+        "deds": [
+          { "l": "$20,000 MXN", "p": 71300 },
+          { "l": "$40,000 MXN", "p": 61900 },
+          { "l": "$80,000 MXN", "p": 52400 }
+        ],
+        "def": 1,
+        "split": false
+      }
+    }
+  },
+  "hospitals": [
+    { "name": "Star Médica Mérida", "city": "Mérida" },
+    { "name": "Clínica de Mérida", "city": "Mérida" },
+    { "name": "Hospital Faro del Mayab", "city": "Mérida" }
+  ],
+  "hospFoot": "Verify the current network directory with Diego before the policy starts.",
+  "comparisonRows": [
+    { "label": "Hospital room", "values": ["Standard", "Private", "Private plus suite"] },
+    { "label": "Surgery, ICU, physician fees", "values": ["100%", "100%", "100%"] },
+    { "label": "Cancer treatment", "values": ["100%", "100%", "100%"] },
+    { "label": "Dental and vision", "values": ["Not covered", "Basic", "Included"] },
+    { "label": "Coverage abroad", "values": ["Emergency only", "Emergency plus referral", "Worldwide"] }
+  ],
+  "waitingRows": [
+    { "label": "Preventive and routine check up", "value": "3 months" },
+    { "label": "Hernia, gallstones, tonsils", "value": "12 months" },
+    { "label": "Declared pre existing conditions", "value": "24 months" }
+  ],
+  "accordions": [
+    { "title": "Deductible and coinsurance", "subtitle": "What you pay per event", "body": "The deductible applies per medical event. Coinsurance is 10% of the remaining covered cost, capped per policy year." },
+    { "title": "Renewal and premium changes", "subtitle": "What moves the premium", "body": "The premium changes with your age bracket and medical inflation, never because you filed a claim." }
+  ],
+  "perks": [
+    { "title": "Telemedicine, 24 hours", "desc": "Unlimited consultations" },
+    { "title": "International second opinion", "desc": "Included at no extra premium" }
+  ]
+}
