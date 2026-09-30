@@ -2,5 +2,7 @@ User-agent: *
 Allow: /
 Disallow: /p/
 Disallow: /proposal.html
+Disallow: /proposal-life.html
+Disallow: /propuestas/
 
 Sitemap: https://www.mexpatsafe.com/sitemap.xml

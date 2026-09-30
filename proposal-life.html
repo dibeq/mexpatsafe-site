@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Your Life Protection Proposal · Mexpat Safe</title>
+<link rel="icon" type="image/svg+xml" href="/assets/mexpatsafe-logo-cross.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Lora:wght@500;600&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-F5ZNZMM6CY"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-F5ZNZMM6CY');</script>
+<style>
+:root{
+  --navy:#0f2340;--ink:#1d2533;--muted:#6b7280;--line:#e4dfd5;
+  --cream:#f7f4ee;--paper:#fffdf9;--gold:#b08d57;--gold-soft:#f1e8d8;--ok:#2f6b4f;--rb:#b4262b;
+  --serif:'Cormorant Garamond',Georgia,serif;--num:'Lora',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:980px;margin:0 auto;padding:0 20px}
+button{font:inherit;cursor:pointer}
+.num{font-family:var(--num);font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.01em}
+/* top bar */
+.top{background:var(--navy);color:#fff}
+.top .wrap{display:flex;justify-content:space-between;align-items:center;height:64px}
+.top img{height:34px;width:auto;display:block}
+.mark{font-size:19px;font-weight:400}.mark b{font-weight:700}
+.top small{font-size:13px;opacity:.75}
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:44px 0 150px;text-align:center}
+.prod img{height:34px;width:auto;display:block}
+.prod{display:inline-flex;align-items:center;gap:14px;background:#fff;border-radius:999px;padding:9px 22px;font-size:13px;color:var(--navy)}
+.prod b{color:var(--rb);letter-spacing:.14em;font-weight:700}
+.prod i{width:1px;height:14px;background:var(--line)}
+.hero h1{font-family:var(--serif);font-weight:500;font-size:clamp(34px,6vw,54px);line-height:1.1;margin:22px auto 44px;max-width:720px}
+.icons{display:flex;justify-content:center;gap:clamp(24px,8vw,88px)}
+.icon{display:flex;flex-direction:column;align-items:center;gap:12px}
+.icon svg{width:clamp(64px,14vw,92px);height:auto;stroke:#fff;stroke-width:1.5;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.icon span{font-size:13px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+/* sections */
+section{padding:64px 0}
+.label{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);text-align:center}
+h2{font-family:var(--serif);font-weight:500;font-size:clamp(28px,4.5vw,40px);text-align:center;margin:8px 0 32px;color:var(--navy)}
+/* sum cards */
+.sums{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:-104px;position:relative}
+.sum{background:var(--paper);border:1.5px solid var(--line);border-radius:14px;padding:30px 12px;text-align:center;transition:.2s;box-shadow:0 10px 30px rgba(15,35,64,.08)}
+.sum:hover{border-color:var(--gold)}
+.sum[aria-pressed=true]{border-color:var(--navy);box-shadow:0 14px 34px rgba(15,35,64,.18);transform:translateY(-4px)}
+.sum .num{display:block;font-size:clamp(28px,4.8vw,40px);font-weight:600;color:var(--navy);line-height:1}
+.sum .cap{display:block;margin-top:10px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.sub{text-align:center;color:var(--muted);font-size:14px;margin-top:18px}
+/* value band */
+.value{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+.value h2{margin-bottom:18px}
+.value h2 .num{font-size:.9em;font-weight:500}
+.daily{font-family:var(--serif);font-size:clamp(22px,3.6vw,30px);color:var(--ink)}
+.daily .num{color:var(--navy);font-size:1.45em;font-weight:600}
+.badges{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
+.badge{display:inline-flex;align-items:center;gap:8px;background:var(--gold-soft);color:var(--navy);border-radius:999px;padding:9px 16px;font-size:14px;font-weight:500}
+.badge svg{width:16px;height:16px;stroke:var(--ok);fill:none;stroke-width:2.2}
+/* portability */
+.port{display:flex;align-items:center;gap:28px;max-width:760px;margin:0 auto}
+.port svg{flex:none;width:84px;height:84px;stroke:var(--navy);stroke-width:1.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
+.port h3{font-family:var(--serif);font-weight:500;font-size:clamp(26px,3.8vw,34px);color:var(--navy);line-height:1.15}
+.port p{color:var(--muted);margin-top:6px}
+/* options */
+.opts{display:grid;gap:22px}
+.opt{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px 24px}
+.opt h4{font-size:15px;font-weight:700;color:var(--navy)}
+.opt p{font-size:13px;color:var(--muted);margin-top:2px}
+.seg{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.seg button{background:#fff;border:1.5px solid var(--line);border-radius:10px;padding:10px 16px;font-size:14px;color:var(--ink);transition:.15s}
+.seg button small{display:block;font-size:11px;color:var(--muted)}
+.seg button small.save{color:var(--ok);font-weight:700}
+.seg button[aria-pressed=true]{background:var(--navy);border-color:var(--navy);color:#fff}
+.seg button[aria-pressed=true] small{color:rgba(255,255,255,.75)}
+.seg button[aria-pressed=true] small.save{color:#9fd3b6}
+.seg button:disabled{opacity:.35;cursor:not-allowed}
+/* summary */
+.summary{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px;text-align:center}
+.summary .k{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.summary .num{display:block;font-size:30px;font-weight:600;color:var(--navy);margin-top:4px}
+.summary .h{font-size:12px;color:var(--muted)}
+details{margin-top:14px;font-size:14px}
+summary{cursor:pointer;color:var(--navy);text-align:center;list-style:none;font-weight:500}
+summary::-webkit-details-marker{display:none}
+table{width:100%;border-collapse:collapse;margin-top:14px;background:var(--paper);border-radius:12px;overflow:hidden}
+td{padding:10px 16px;border-bottom:1px solid var(--line)}
+td:last-child{text-align:right;font-variant-numeric:tabular-nums}
+tr.tot td{font-weight:700;color:var(--navy);border-bottom:0}
+/* ROP */
+.rop{background:var(--navy);color:#fff;border-radius:18px;padding:34px;display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;margin-top:28px}
+.rop h3{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.15}
+.rop p{opacity:.8;font-size:15px;margin-top:8px}
+.rop .cond{font-size:12px;opacity:.55;margin-top:14px}
+.rop .back{text-align:right}
+.rop .back .num{display:block;font-size:clamp(36px,6vw,52px);font-weight:600;color:var(--gold);line-height:1}
+.rop .back small{display:block;font-size:13px;opacity:.75;margin-top:8px}
+.rop.off .back .num{opacity:.35}
+.switch{display:inline-flex;align-items:center;gap:12px;margin-top:20px;background:none;border:0;color:#fff;font-size:15px}
+.switch .t{width:52px;height:30px;border-radius:99px;background:rgba(255,255,255,.25);position:relative;transition:.2s}
+.switch .t::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;transition:.2s}
+.switch[aria-checked=true] .t{background:var(--gold)}
+.switch[aria-checked=true] .t::after{left:25px}
+/* included */
+.inc{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.inc div{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:24px 18px;text-align:center;font-size:14.5px;line-height:1.45}
+.inc svg{display:block;margin:0 auto 14px;width:40px;height:40px;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+/* CTA */
+.cta{background:var(--navy);color:#fff;text-align:center}
+.cta h2{color:#fff}
+.btns{display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.btn{display:inline-block;text-decoration:none;border-radius:10px;padding:15px 26px;font-weight:500;font-size:15px}
+.btn.p{background:var(--gold);color:var(--navy)}
+.btn.s{border:1.5px solid rgba(255,255,255,.4);color:#fff}
+footer{padding:32px 0 48px;font-size:12px;color:var(--muted);text-align:center;line-height:1.7}
+.state{padding:120px 20px;text-align:center;color:var(--muted)}
+@media (max-width:860px){.inc{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:720px){
+  .hero{padding-bottom:120px}
+  .sums{grid-template-columns:1fr;margin-top:-88px}
+  .sum{padding:22px 12px}
+  .port{flex-direction:column;text-align:center;gap:16px}
+  .rop{grid-template-columns:1fr;padding:26px}
+  .rop .back{text-align:left}
+  .summary{grid-template-columns:1fr}
+  .top small{display:none}
+}
+@media (max-width:480px){.inc{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <img src="/assets/mexpatsafe-logo-white.svg" alt="Mexpat Safe" onerror="var s=document.createElement('span');s.className='mark';s.innerHTML='<b>M</b>expat <b>S</b>afe';this.replaceWith(s)">
+  <small id="prep"></small>
+</div></header>
+<noscript><p class="state">Please enable JavaScript to view your proposal, or write to info@mexpatsafe.com.</p></noscript>
+<main id="app"><p class="state">Loading your proposal…</p></main>
+
+<!-- Data zone: keep EMPTY in the repo. Live JSON loads from /propuestas/data/<slug>.json via ?q=<slug> (uploaded by cPanel, never committed). Filled only for local previews. -->
+<script id="proposal-data" type="application/json"></script>
+
+<script>
+(function(){
+'use strict';
+var ICON={
+  family:'<svg viewBox="0 0 64 64"><circle cx="20" cy="17" r="6"/><circle cx="44" cy="17" r="6"/><circle cx="32" cy="31" r="4.5"/><path d="M7 52c0-9 5.5-15 13-15 4.5 0 8 2 10 5.5"/><path d="M57 52c0-9-5.5-15-13-15-4.5 0-8 2-10 5.5"/><path d="M23 55c0-6 4-10 9-10s9 4 9 10"/></svg>',
+  expenses:'<svg viewBox="0 0 64 64"><path d="M3 31 22 15l19 16"/><path d="M8 27v25h28V27"/><path d="M18 52V41h8v11"/><ellipse cx="51" cy="36" rx="9" ry="3.5"/><path d="M42 36v5c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5v-5"/><path d="M42 41v5c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5v-5"/><path d="M42 46v5c0 1.9 4 3.5 9 3.5s9-1.6 9-3.5v-5"/></svg>',
+  umbrella:'<svg viewBox="0 0 64 64"><path d="M32 7v4"/><path d="M6 33C6 20 18 11 32 11s26 9 26 22c-3-3-6-4.5-8.7-4.5S44 30 41 33c-3-3-6-4.5-9-4.5S26 30 23 33c-3-3-5.6-4.5-8.3-4.5S9 30 6 33z"/><path d="M32 33v17a5.5 5.5 0 0 1-11 0"/></svg>',
+  globe:'<svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="19"/><path d="M5 24h38"/><path d="M24 5c5.5 5.2 8 11.6 8 19s-2.5 13.8-8 19c-5.5-5.2-8-11.6-8-19s2.5-13.8 8-19z"/><path d="M8 14h32M8 34h32"/></svg>',
+  lock:'<svg viewBox="0 0 48 48"><rect x="10" y="21" width="28" height="21" rx="3"/><path d="M16 21v-6a8 8 0 0 1 16 0v6"/><path d="M24 29v6"/></svg>',
+  heart:'<svg viewBox="0 0 48 48"><path d="M24 41S6 30.5 6 17.5A9.5 9.5 0 0 1 24 13a9.5 9.5 0 0 1 18 4.5C42 30.5 24 41 24 41z"/><path d="M12 24h7l3-5 4 9 3-4h7"/></svg>',
+  plane:'<svg viewBox="0 0 48 48"><path d="M20 27 7 22l3-3 15 2 9-9c2-2 5-2.5 6-1.5s.5 4-1.5 6l-9 9 2 15-3 3-5-13-6 6v5l-2.5 2.5-3-6.5-6.5-3L8 32h5z"/></svg>',
+  check:'<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>'
+};
+var FREQ={annual:{n:1,l:'Annual',u:'year'},semi:{n:2,l:'Semi-annual',u:'6 months'},quarterly:{n:4,l:'Quarterly',u:'quarter'},monthly:{n:12,l:'Monthly',u:'month'}};
+var D,S;
+function c(v){return Math.round(v*100);}
+function money(cents,dec){var d=dec===undefined?2:dec;return '$'+(cents/100).toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});}
+function k(n){return '$'+Number(n).toLocaleString('en-US');}
+function N(s){return '<span class="num">'+s+'</span>';}
+function esc(s){return String(s).replace(/[&<>"']/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];});}
+
+function load(){
+  var inline=document.getElementById('proposal-data').textContent.trim();
+  if(inline) return Promise.resolve(JSON.parse(inline));
+  var q=(new URLSearchParams(location.search).get('q')||'').trim();
+  if(!/^[a-z0-9][a-z0-9._-]{0,80}$/i.test(q)) return Promise.reject(new Error('bad slug'));
+  return fetch('/propuestas/data/'+q+'.json',{cache:'no-store'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();});
+}
+
+function avail(f){return D.base[S.sum][S.term][f]!=null;}
+
+// Line items for the current selection at frequency f (portal ROP total bug: ROP counted once here)
+function calc(f){
+  var b=D.base[S.sum][S.term][f],r=D.rop[S.sum][S.term][f];
+  var lines=[['Life insurance · '+k(S.sum),c(b)],['Funeral & repatriation assistance',c(D.funeral[f])]];
+  if(S.cancer!=='0') lines.push(['First cancer diagnosis · '+k(S.cancer),c(D.cancer[S.cancer][f])]);
+  if(S.rop) lines.push(['Return of Premium',c(r)]);
+  var modal=lines.reduce(function(a,x){return a+x[1];},0), n=FREQ[f].n, fee=c(D.plan.policyFee);
+  return {lines:lines,modal:modal,first:modal+fee,fee:fee,n:n,yearly:modal*n,daily:Math.round(modal*n/365)};
+}
+function saving(f){
+  if(f==='monthly'||!avail('monthly')||!avail(f)) return 0;
+  return Math.round((1-calc(f).yearly/calc('monthly').yearly)*100);
+}
+
+function segBtn(group,val,label,small,disabled){
+  var on=String(S[group])===String(val);
+  return '<button type="button" data-g="'+group+'" data-v="'+val+'" aria-pressed="'+on+'"'+(disabled?' disabled':'')+'>'+label+(small||'')+'</button>';
+}
+
+function render(){
+  if(!avail(S.freq)) S.freq=avail('monthly')?'monthly':'annual';
+  var x=calc(S.freq), cl=D.client, pl=D.plan, ret=D.returnAmount[S.sum][S.term], endYear=cl.effectiveYear+Number(S.term);
+  var h='';
+  // hero
+  h+='<section class="hero"><div class="wrap"><div class="prod">'+(pl.logo?'<img src="'+esc(pl.logo)+'" alt="'+esc(pl.insurerShort)+'" onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'inline\'"><b style="display:none">':'<b>')+esc(pl.insurerShort).toUpperCase()+'</b><i></i><span>'+esc(pl.name)+'</span></div>'+
+     '<h1>Give your loved ones the right protection.</h1>'+
+     '<div class="icons"><div class="icon">'+ICON.family+'<span>Family</span></div><div class="icon">'+ICON.expenses+'<span>Expenses</span></div><div class="icon">'+ICON.umbrella+'<span>Peace of mind</span></div></div></div></section>';
+  // sums
+  h+='<section style="padding-top:0"><div class="wrap"><div class="sums">';
+  D.sums.forEach(function(s){h+='<button type="button" class="sum" data-g="sum" data-v="'+s+'" aria-pressed="'+(S.sum===s)+'">'+N(k(s))+'<span class="cap">Protection</span></button>';});
+  h+='</div><p class="sub">Paid in full to the people you choose.</p></div></section>';
+  // value
+  h+='<section class="value"><div class="wrap"><div class="label">The greatest protection at the lowest cost</div>'+
+     '<h2>'+N(k(S.sum))+' of protection</h2>'+
+     '<p class="daily">for just '+N(money(x.daily))+' a day</p>'+
+     '<div class="badges"><span class="badge">'+ICON.check+'No medical exams required to issue your policy</span><span class="badge">'+ICON.check+'Premium fixed for '+S.term+' years</span></div></div></section>';
+  // portability
+  h+='<section><div class="wrap"><div class="port">'+ICON.globe+'<div><h3>Protection that moves with you.</h3>'+
+     '<p>New country, new home — your policy stays with you, worldwide.</p></div></div></div></section>';
+  // configure
+  h+='<section style="padding-top:0"><div class="wrap"><div class="label">Make it yours</div><h2>Your plan, your way</h2><div class="opts">';
+  h+='<div class="opt"><h4>Term</h4><p>How long your protection lasts.</p><div class="seg">';
+  D.terms.forEach(function(t){h+=segBtn('term',t,t+' years','<small>until age '+(cl.age+Number(t))+'</small>');});
+  h+='</div></div>';
+  h+='<div class="opt"><h4>First cancer diagnosis benefit</h4><p>A lump sum paid directly to you, available until age '+pl.cancerMaxAge+'.</p><div class="seg">';
+  Object.keys(D.cancer).sort(function(a,b){return a-b;}).forEach(function(v){h+=segBtn('cancer',v,v==='0'?'None':k(v));});
+  h+='</div></div>';
+  h+='<div class="opt"><h4>Payment frequency</h4><div class="seg">';
+  Object.keys(FREQ).forEach(function(f){var sv=saving(f);h+=segBtn('freq',f,FREQ[f].l,sv>0?'<small class="save">Save '+sv+'%</small>':'',!avail(f));});
+  h+='</div></div></div>';
+  // summary (totals)
+  var multi=x.n>1;
+  h+='<div class="summary" style="margin-top:28px">'+
+     '<div><div class="k">First payment</div>'+N(money(x.first))+'<div class="h">includes one-time '+money(x.fee,0)+' policy fee</div></div>'+
+     '<div><div class="k">'+(multi?'Then, each '+FREQ[S.freq].u:'Following years')+'</div>'+N(money(x.modal))+'<div class="h">'+(multi?'fixed for '+S.term+' years':'fixed for '+S.term+' years')+'</div></div>'+
+     '<div><div class="k">Per year</div>'+N(money(x.yearly))+'<div class="h">'+esc(FREQ[S.freq].l.toLowerCase())+' payments</div></div></div>'+
+     '<details><summary>See breakdown</summary><table>';
+  x.lines.forEach(function(l){h+='<tr><td>'+esc(l[0])+'</td><td>'+money(l[1])+'</td></tr>';});
+  h+='<tr class="tot"><td>Per '+FREQ[S.freq].u+'</td><td>'+money(x.modal)+'</td></tr></table></details>';
+  // ROP (below totals)
+  h+='<div class="rop'+(S.rop?'':' off')+'"><div><h3>Stay protected.<br>Get it all back.</h3>'+
+     '<p>Keep your policy for the full '+S.term+' years and every dollar of your life insurance premium comes back to you. Your protection ends up costing nothing.</p>'+
+     '<button type="button" class="switch" role="switch" data-g="rop" aria-checked="'+S.rop+'"><span class="t"></span>Return of Premium '+(S.rop?'included':'not included')+'</button>'+
+     '<p class="cond">Paid at the end of the term. No refund if the policy ends early.</p></div>'+
+     '<div class="back">'+N(k(ret))+'<small>back to you in '+esc(cl.effectiveMonth)+' '+endYear+'</small></div></div></div></section>';
+  // included
+  h+='<section style="padding-top:0"><div class="wrap"><div class="label">Always included</div><h2>Peace of mind, built in</h2><div class="inc">'+
+     '<div>'+ICON.globe+'Coverage that follows you, worldwide</div>'+
+     '<div>'+ICON.lock+'Premium guaranteed and fixed for the full term</div>'+
+     '<div>'+ICON.heart+'Up to 50% of your benefit in advance for a terminal illness</div>'+
+     '<div>'+ICON.plane+'Funeral & repatriation assistance up to '+k(pl.funeralBenefit)+'</div></div></div></section>';
+  // CTA
+  var msg='Hi '+D.advisor.name+', I reviewed my life proposal: '+k(S.sum)+' · '+S.term+' years · '+(S.rop?'with':'without')+' Return of Premium · cancer benefit '+(S.cancer==='0'?'none':k(S.cancer))+' · '+FREQ[S.freq].l.toLowerCase()+'.';
+  h+='<section class="cta"><div class="wrap"><div class="label">Next step</div><h2>Ready when you are</h2><div class="btns">'+
+     '<a class="btn p" data-cta-position="cta-whatsapp" href="https://wa.me/'+esc(D.advisor.whatsapp)+'?text='+encodeURIComponent(msg)+'" target="_blank" rel="noopener">Talk to '+esc(D.advisor.name)+' on WhatsApp</a>'+
+     '<a class="btn s" data-cta-position="cta-calendly" href="'+esc(D.advisor.calendly)+'" target="_blank" rel="noopener">Book a call</a>'+
+     '<a class="btn s" data-cta-position="cta-email" href="mailto:'+esc(D.advisor.email)+'">'+esc(D.advisor.email)+'</a></div></div></section>';
+  h+='<footer><div class="wrap">'+esc(pl.name)+' is issued by '+esc(pl.insurer)+', domiciled in Barbados, rated B++ (Good) by AM Best.<br>'+
+     'Illustration based on quote '+esc(cl.quoteRef)+' of '+esc(cl.quoteDate)+', valid until '+esc(cl.validUntil)+'. Final terms subject to the insurer\'s approval. Cancer benefit has a 90-day waiting period.<br>© Mexpat Safe</div></footer>';
+  document.getElementById('app').innerHTML=h;
+}
+
+document.addEventListener('click',function(e){
+  var b=e.target.closest('[data-g]');
+  if(b){var g=b.getAttribute('data-g');
+    if(g==='rop') S.rop=!S.rop; else S[g]=b.getAttribute('data-v');
+    render(); return;}
+  var a=e.target.closest('[data-cta-position]');
+  if(a&&window.gtag){var ch=a.getAttribute('data-cta-position').split('-').pop();
+    gtag('event',ch+'_click',{cta_position:a.getAttribute('data-cta-position'),product:'life'});}
+});
+
+load().then(function(data){
+  D=data; S=Object.assign({},data.defaults);
+  document.getElementById('prep').textContent='Prepared for '+data.client.firstName+' '+data.client.lastName+' · '+data.client.quoteDate;
+  render();
+  if(window.gtag) gtag('event','proposal_view',{product:'life'});
+}).catch(function(){
+  document.getElementById('app').innerHTML='<p class="state">This proposal link is not valid. Please contact info@mexpatsafe.com.</p>';
+});
+})();
+</script>
+</body>
+</html>

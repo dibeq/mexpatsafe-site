@@ -33,3 +33,6 @@ SoT-backup-*.md
 
 # Archivos temporales de ensamblado
 *.tmp
+
+# Client proposal data (uploaded by cPanel, never committed: public repo)
+propuestas/
