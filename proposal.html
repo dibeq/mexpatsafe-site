@@ -331,6 +331,14 @@ nav[data-scroll]::-webkit-scrollbar{display:none}
           </summary>
           <div style="padding:0 22px 22px">
             <p style="color:#6B7280;font-size:14.5px;max-width:78ch;text-wrap:pretty">{{ acc.body }}</p>
+            <ul style="list-style:none;display:flex;flex-direction:column;gap:2px;max-width:78ch">
+              <sc-for list="{{ acc.items }}" as="it" hint-placeholder-count="0">
+                <li style="position:relative;padding:9px 0 9px 18px;border-top:1px solid #EEF1F5;font-size:14px;color:#4B5563;text-wrap:pretty">
+                  <span aria-hidden="true" style="position:absolute;left:2px;top:17px;width:6px;height:6px;border-radius:50%;background:#D69828"></span>
+                  <b style="color:#0F355B;font-weight:600">{{ it.k }}</b> {{ it.t }}
+                </li>
+              </sc-for>
+            </ul>
           </div>
         </details>
       </sc-for>
@@ -816,9 +824,9 @@ class Component extends DCLogic {
       showComparison: this.props.showComparison !== false,
       planCards, dedCards, memberChips, memberLines,
       planName: p.name,
-      dedNote: p.split
+      dedNote: p.dedNote || (p.split
         ? 'Two figures means two deductibles: one for care close to home, one for care abroad. A higher deductible lowers your premium.'
-        : 'A single deductible figure applies worldwide. A higher deductible lowers your premium.',
+        : 'A single deductible figure applies worldwide. A higher deductible lowers your premium.'), // plan.dedNote overrides
       total: money(total),
       monthly: money(Math.round(total / 12)),
       summary: p.name + ' \u00b7 ' + d.l + ' deductible' + (isFamily ? ' \u00b7 ' + activeMembers.length + ' covered' : ''),
@@ -830,7 +838,7 @@ class Component extends DCLogic {
       netUs: p.net, netOon: p.oon,
       hospBadge: p.hospBadge, hospCount: p.hospCount, hospitals: CONFIG.hospitals, hospFoot: CONFIG.hospFoot,
       planCols, comparisonRows, premiumRow,
-      waitingRows: CONFIG.waitingRows, accordions: CONFIG.accordions,
+      waitingRows: CONFIG.waitingRows, accordions: (CONFIG.accordions || []).map(a => ({ ...a, items: a.items || [] })), // items: optional [{ k: bold label, t: text }] bullet list under the body
       perks: CONFIG.perks,
       navLinks: SECTIONS.map(s => ({ label: s.label, href: '#' + s.id, current: s.id === this.state.active ? 'true' : 'false' })),
       progressRef: this.progressRef,
